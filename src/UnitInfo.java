@@ -8,7 +8,7 @@
  * @updated February 17, 2020
  */
 
-public class UnitInfo {
+public class UnitInfo extends WeaponInfo {
 	//The variables that get put in when creating a unit
 	String name;
 	int hp;
@@ -20,11 +20,6 @@ public class UnitInfo {
 	int def;
 	int res;
 	int cha;
-	boolean magEqp;
-	int mtBase;
-	int hitBase;
-	int critBase;
-	int wt;
 	
 	//The variables that we calculate
 	int atk;
@@ -41,8 +36,8 @@ public class UnitInfo {
 	int critDmg;
 	
 	//Instantiating a unit
-	public void instantiateUnit(String name, int hp, int str, int mag, int dex, int spd, int lck, int def, int res, int cha,
-			Boolean magEqp, int mtBase, int hitBase, int critBase, int wt) {
+	public void instUnit(String name, int hp, int str, int mag, int dex, int spd, int lck, int def, int res, int cha,
+			WeaponInfo wepInfo) {
 		
 		//converting stats
 		this.name = name;
@@ -55,12 +50,13 @@ public class UnitInfo {
 		this.def = def;
 		this.res = res;
 		this.cha = cha;
-		this.magEqp = magEqp;
-		this.mtBase = mtBase;
-		this.hitBase = hitBase;
+		this.wepName = wepInfo.wepName;
+		this.magEqp = wepInfo.magEqp;
+		this.mtBase = wepInfo.mtBase;
+		this.hitBase = wepInfo.hitBase;
 		
 		//some base calculations
-		if (this.magEqp == false) {
+		if (wepInfo.magEqp == false) {
 			this.atk = this.mtBase + this.str;
 			this.hit = this.hitBase + this.dex;
 		} else {
@@ -100,7 +96,7 @@ public class UnitInfo {
 		one.critDmg = one.dmgFinal * 3;
 		
 		if(atkDouble == true) {
-			results = one.name + " attacks " + target.name + "!"
+			results = one.name + " attacks " + target.name + "with" + one.wepName + "!"
 					+ "\nMt: "+ one.dmgFinal + " x2" + "\nHit: " + one.hitFinal + "\nCrit: " + one.critFinal + "\nCrit Mt: " + one.critDmg;
 		} else {
 			results = one.name + " attacks " + target.name + "!"
