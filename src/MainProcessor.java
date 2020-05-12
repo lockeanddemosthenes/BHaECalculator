@@ -85,16 +85,19 @@ public class MainProcessor {
 						 * UNITS *
 						 *******************/
 		  String[] unitNameList = {
-				  "Adelaide", "Ahab", "Alyse", "Annette",
-				  "Ashe", "Balthus", "Bernadetta", "Briar", "Byleth", "Caleb",
-				  "Caspar", "Caster", "Claude", "Constance", "Cyril", "Dahlia",
-				  "Dedue", "Dimitri", "Dorothea", "Edelgard", "Emaline", "Emilie",
-				  "Felix", "Ferdinand", "Finley", "Flayn", "Ghadir", "Hanneman",
-				  "Hapi", "Hilda", "Hubert", "Ignatz", "Ingrid", "Jeritza", "Koreaia",
+				  "Adelaide", "Ahab", "Alyse", "Annette", "Ashe", "Ashley",
+				  "Balthus", "Banquo", "Bernadetta", "Briar", "Byleth",
+				  "Callahan", "Caspar", "Caster", "Claude", "Constance", "Cyril",
+				  "Dahlia", "Dedue", "Dimitri", "Dorothea",
+				  "Edelgard", "Emaline", "Erik",
+				  "Felix", "Ferdinand", "Finley", "Flayn",
+				  "Hanneman", "Hapi", "Hilda", "Hillevi", "Hubert",
+				  "Ignatz", "Ingrid", "Jeritza", "Koreaia",
 				  "Layla", "Leonie", "Linhardt", "Lorenz", "Lucy", "Lysithea",
-				  "Manuela", "Marianne", "Matilda", "Mercedes", "Ourania", "Percy",
-				  "Petra", "Raphael", "Rowan", "Sabella", "Selena", "Seteth", "Shamir",
-				  "Sylvain", "Thyra", "Victoria", "Viliana", "Yuri", "Zegrath",
+				  "Manuela", "Mariam", "Marianne", "Matilda", "Mercedes", "Mysa",
+				  "Percy", "Petra", "Raphael", "Rowan",
+				  "Sabella", "Selena", "Seteth", "Shamir", "Sylvain",
+				  "Thyra", "Tobias", "Tristan", "Victoria", "Viliana", "William", "Yuri", "Zegrath",
 				  "Myrmidon (CoS)", "Soldier (CoS)", "Monk (CoS)", "Archer (CoS)",
 				  "Fighter (CoS)"
 				  };
