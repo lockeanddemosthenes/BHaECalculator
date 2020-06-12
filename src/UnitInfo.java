@@ -29,7 +29,8 @@ public class UnitInfo {
 	int crit;
 	int critAvo;
 	int atkSpd;
-	int avo;
+	int magAvo;
+	int physAvo;
 	
 	int critDmg;
 	int dmgFinal;
@@ -72,7 +73,8 @@ public class UnitInfo {
 		crit = wepCrit + (dex + lck) / 2;
 		critAvo = lck;
 		atkSpd = spd - (wepWt - (int)(str/5));
-		avo = spd - (wepWt - (int)(str/5));
+		physAvo = atkSpd;
+		magAvo = (spd + lck) / 2;
 	}
 	
     @Override

@@ -34,6 +34,7 @@ public class MainProcessor {
 		Scanner weaponInput = new Scanner(new File("weapons.txt"));
 		Scanner unitInput = new Scanner(new File("units.txt"));
 
+		// parse weapon list
 		WeaponInfo[] weapons = new WeaponInfo[0];
 		while (weaponInput.hasNext()) {
 			int id = weaponInput.nextInt();
@@ -48,9 +49,10 @@ public class MainProcessor {
 			weapons = addWeapon(weapons, newWeapon);
 		}
 		weaponInput.close();
-		//final WeaponInfo[] weaponsFinal = new WeaponInfo[weapons.length];
-
+		
+		// parse unit list
 		UnitInfo[] units = new UnitInfo[0];
+		String[] unitNames = new String[0];
 		while (unitInput.hasNext()) {
 			String name = unitInput.next();
 			int hp = unitInput.nextInt();
@@ -67,41 +69,16 @@ public class MainProcessor {
 
 			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepID);
 			units = addUnit(units, newUnit);
+			unitNames = addName(unitNames, name);
 		}
 		unitInput.close();
 		final UnitInfo[] unitsFinal = new UnitInfo[units.length];
-
-		/*
-		 * for (WeaponInfo weapon : weapons) { System.out.println(weapon); }
-		 */
-		 for (int i = 0; i < units.length; i++) {
-			 unitsFinal[i] = units[i];
-		 }
-		 
-		//System.out.println(unitsFinal[2]);
-		 
-
-			    	/********************
-						 * UNITS *
-						 *******************/
-		  String[] unitNameList = {
-				  "Adelaide", "Ahab", "Alyse", "Annette", "Ashe", "Ashley",
-				  "Balthus", "Banquo", "Bernadetta", "Briar", "Byleth",
-				  "Callahan", "Caspar", "Caster", "Claude", "Constance", "Cyril",
-				  "Dahlia", "Dedue", "Dimitri", "Dorothea",
-				  "Edelgard", "Emaline", "Erik",
-				  "Felix", "Ferdinand", "Finley", "Flayn",
-				  "Hanneman", "Hapi", "Hilda", "Hillevi", "Hubert",
-				  "Ignatz", "Ingrid", "Jeritza", "Koreaia",
-				  "Layla", "Leonie", "Linhardt", "Lorenz", "Lucy", "Lysithea",
-				  "Manuela", "Mariam", "Marianne", "Matilda", "Mercedes", "Mysa",
-				  "Percy", "Petra", "Raphael", "Rowan",
-				  "Sabella", "Selena", "Seteth", "Shamir", "Sylvain",
-				  "Thyra", "Tobias", "Tristan", "Victoria", "Viliana", "William", "Yuri", "Zegrath",
-				  "Myrmidon (CoS)", "Soldier (CoS)", "Monk (CoS)", "Archer (CoS)",
-				  "Fighter (CoS)"
-				  };
-												 
+		final String[] unitNameList = new String[unitNames.length];
+		
+		for (int i = 0; i < units.length; i++) {
+			unitsFinal[i] = units[i];
+			unitNameList[i] = unitNames[i];
+		}				 
 
 		/*********************
 		 * GUI STUFF *
@@ -115,15 +92,34 @@ public class MainProcessor {
 			JComboBox<String> competitorTwo = new JComboBox<>(unitNameList);
 			 
 			JButton fightButton = new JButton("Fight!");
+			JButton swapButton = new JButton("Swap");
 
 			buttonPanel.add(competitorOne);
 			buttonPanel.add(competitorTwo);
 			buttonPanel.add(fightButton);
+			buttonPanel.add(swapButton);
 
 			fightButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int competitorOneIndex = competitorOne.getSelectedIndex();
 					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+					resultPanel.setText(battle(unitOne, unitTwo));
+				}
+			});
+			
+			swapButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int unitOneIndexTemp = competitorOne.getSelectedIndex();
+					int unitTwoIndexTemp = competitorTwo.getSelectedIndex();
+					
+					competitorOne.setSelectedIndex(unitTwoIndexTemp);
+					competitorTwo.setSelectedIndex(unitOneIndexTemp);
+					
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					
 					UnitInfo competitorOne = unitsFinal[competitorOneIndex];
 					UnitInfo competitorTwo = unitsFinal[competitorTwoIndex];
 					resultPanel.setText(battle(competitorOne, competitorTwo));
@@ -140,6 +136,7 @@ public class MainProcessor {
 			frame.getContentPane().add(outputPanel, BorderLayout.WEST);
 
 			frame.pack();
+			frame.setLocationRelativeTo(null);
 			frame.setVisible(true);
 			frame.setSize(450, 300);
 		});
@@ -162,6 +159,14 @@ public class MainProcessor {
 
 		return newUnits;
 	}
+	
+	private static String[] addName(String[] names, String nameToAdd) {
+		String[] newNames = new String[names.length + 1];
+		System.arraycopy(names, 0, newNames, 0, names.length);
+		newNames[newNames.length - 1] = nameToAdd;
+		
+		return newNames;
+	}
 
 	// Calculating battle info
 	
@@ -175,11 +180,12 @@ public class MainProcessor {
 		
 		if(one.magEqp == false) {
 			one.dmgFinal = one.atk - target.def;
+			one.hitFinal = one.hit - target.physAvo;
 		} else {
 			one.dmgFinal = one.atk - target.res;
+			one.hitFinal = one.hit - target.magAvo;
 		}
 		
-		one.hitFinal = one.hit - target.avo;
 		one.critFinal = one.crit - target.critAvo;
 		one.critDmg = one.dmgFinal * 3;
 	  
