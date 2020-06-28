@@ -36,8 +36,9 @@ public class MainProcessor {
 
 		// parse weapon list
 		WeaponInfo[] weapons = new WeaponInfo[0];
+		int id = 0;
 		while (weaponInput.hasNext()) {
-			int id = weaponInput.nextInt();
+			id += 1;
 			String wepName = weaponInput.next();
 			boolean magEqp = weaponInput.nextBoolean();
 			int mtBase = weaponInput.nextInt();
