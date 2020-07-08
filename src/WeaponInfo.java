@@ -1,7 +1,6 @@
 
 public class WeaponInfo {
 	//The variables that get put in when creating a weapon
-	int wepInd;
 	String wepName;
 	boolean magEqp;
 	int mtBase;
@@ -9,8 +8,7 @@ public class WeaponInfo {
 	int critBase;
 	int wt;
 	
-	public WeaponInfo(int ind, String n, boolean m, int mt, int hit, int crit, int weight) {
-        wepInd = ind;
+	public WeaponInfo(String n, boolean m, int mt, int hit, int crit, int weight) {
 		wepName = n;
         magEqp = m;
         mtBase = mt;

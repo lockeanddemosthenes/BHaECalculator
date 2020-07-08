@@ -29,8 +29,7 @@ public class UnitInfo {
 	int crit;
 	int critAvo;
 	int atkSpd;
-	int magAvo;
-	int physAvo;
+	int genAvo;
 	
 	int critDmg;
 	int dmgFinal;
@@ -52,7 +51,6 @@ public class UnitInfo {
 		res = r;
 		cha = c;
 		WeaponInfo wep = w;
-		wepInd = wep.wepInd;
 		wepName = wep.wepName;
 		magEqp = wep.magEqp;
 		
@@ -64,17 +62,15 @@ public class UnitInfo {
 
 		if(magEqp == false) {
 			atk = wepMt + str;
-			hit = wepHit + dex;
 		} else {
 			atk = wepMt + mag;
-			hit = wepHit + (dex + lck) / 2;
 		}
 		
+		hit = wepHit + (dex + lck) / 2;
 		crit = wepCrit + (dex + lck) / 2;
 		critAvo = lck;
 		atkSpd = spd - (wepWt - (int)(str/5));
-		physAvo = atkSpd;
-		magAvo = (spd + lck) / 2;
+		genAvo = (atkSpd / 2) + lck;
 	}
 	
     @Override

@@ -36,9 +36,7 @@ public class MainProcessor {
 
 		// parse weapon list
 		WeaponInfo[] weapons = new WeaponInfo[0];
-		int id = 0;
 		while (weaponInput.hasNext()) {
-			id += 1;
 			String wepName = weaponInput.next();
 			boolean magEqp = weaponInput.nextBoolean();
 			int mtBase = weaponInput.nextInt();
@@ -46,7 +44,7 @@ public class MainProcessor {
 			int critBase = weaponInput.nextInt();
 			int wt = weaponInput.nextInt();
 
-			WeaponInfo newWeapon = new WeaponInfo(id, wepName, magEqp, mtBase, hitBase, critBase, wt);
+			WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt);
 			weapons = addWeapon(weapons, newWeapon);
 		}
 		weaponInput.close();
@@ -66,6 +64,7 @@ public class MainProcessor {
 			int res = unitInput.nextInt();
 			int cha = unitInput.nextInt();
 			int wepInd = unitInput.nextInt();
+			wepInd = wepInd - 1;
 			WeaponInfo wepID = weapons[wepInd];
 
 			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepID);
@@ -181,12 +180,11 @@ public class MainProcessor {
 		
 		if(one.magEqp == false) {
 			one.dmgFinal = one.atk - target.def;
-			one.hitFinal = one.hit - target.physAvo;
 		} else {
 			one.dmgFinal = one.atk - target.res;
-			one.hitFinal = one.hit - target.magAvo;
 		}
 		
+		one.hitFinal = one.hit - target.genAvo;
 		one.critFinal = one.crit - target.critAvo;
 		one.critDmg = one.dmgFinal * 3;
 	  
