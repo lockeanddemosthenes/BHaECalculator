@@ -59,6 +59,8 @@ public class UnitInfo {
 		int wepHit = wep.hitBase;
 		int wepCrit = wep.critBase;
 		int wepWt = wep.wt;
+		int wepAdjWt = wepWt - (int)(str/5);
+		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
 
 		if(magEqp == false) {
 			atk = wepMt + str;
@@ -66,11 +68,12 @@ public class UnitInfo {
 			atk = wepMt + mag;
 		}
 		
-		hit = wepHit + (dex + lck) / 2;
-		crit = wepCrit + (dex + lck) / 2;
+		hit = wepHit + dex + lck/2;
+		crit = wepCrit + dex + lck/2;
 		critAvo = lck;
-		atkSpd = spd - (wepWt - (int)(str/5));
-		genAvo = (atkSpd / 2) + lck;
+		genAvo = lck + atkSpd/2;
+		atkSpd = spd - wepAdjWt;
+		atkSpd = atkSpd < 0? 0 : atkSpd;
 	}
 	
     @Override

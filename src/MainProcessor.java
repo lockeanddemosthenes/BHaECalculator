@@ -174,7 +174,7 @@ public class MainProcessor {
 		boolean atkDouble = false;
 		String results;
 	  
-		if(one.spd - target.spd >= 4) {
+		if(one.atkSpd - target.atkSpd >= 4) {
 			atkDouble = true;
 		}
 		
