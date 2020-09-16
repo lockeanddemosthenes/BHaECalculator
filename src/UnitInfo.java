@@ -3,7 +3,7 @@
  * stat blocks of each unit.
  * 
  * 
- * @author Errica Cheng (github: lockeanddemosthenes)
+ * @author Errica Cheng (github: lockeanddemosthenes || discord: Locrius 光复香港#9567)
  * @created February 17, 2020
  * @updated February 17, 2020
  */
@@ -24,17 +24,13 @@ public class UnitInfo {
 	
 	String wepName;
 	boolean magEqp;
-	int atk;
+	int magAtk;
+	int physAtk;
 	int hit;
 	int crit;
 	int critAvo;
 	int atkSpd;
 	int genAvo;
-	
-	int critDmg;
-	int dmgFinal;
-	int hitFinal;
-	int critFinal;
 	
 	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int c,
 			WeaponInfo w) {
@@ -62,12 +58,8 @@ public class UnitInfo {
 		int wepAdjWt = wepWt - (int)(str/5);
 		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
 
-		if(magEqp == false) {
-			atk = wepMt + str;
-		} else {
-			atk = wepMt + mag;
-		}
-		
+		magAtk = wepMt + mag;
+		physAtk = wepMt + str;
 		hit = wepHit + dex + lck/2;
 		crit = wepCrit + dex + lck/2;
 		critAvo = lck;
@@ -75,9 +67,4 @@ public class UnitInfo {
 		atkSpd = spd - wepAdjWt;
 		atkSpd = atkSpd < 0? 0 : atkSpd;
 	}
-	
-    @Override
-    public String toString() {
-        return String.format("Name: %s\r\nStr: %s\r\nWep: %s", name, str, wepName);
-    }
 }

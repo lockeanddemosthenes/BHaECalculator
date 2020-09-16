@@ -1,0 +1,10 @@
+TempestLance		08 10 00 00 false No effect
+Knightkneeler		05 15 00 00 false Mtx3 vs. cavalry
+ShatterSlash		04 10 00 00 false Def-5 on foe for 1 turn
+Vengeance		02 00 10 00 false Mt+(missing HP/3) - not accounted for
+MonsterPiercer		07 00 00 00 false Mtx3 vs. monsters
+HitAndRun		04 10 00 20 false Moves 1 space back after combat
+FrozenLance		03 05 00 00 true Mt + (dex/3)
+SwiftStrikes		02 00 00 00 false Two consecutive hits
+GlowingEmber		02 00 00 10 false Mt + (def/3)
+LanceJab		03 00 10 00 false Mt + (spd/3)

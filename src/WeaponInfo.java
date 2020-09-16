@@ -1,3 +1,12 @@
+/**
+ * WeaponInfo: A class dedicated to processing
+ * the statblocks of each weapon.
+ * 
+ * 
+ * @author Errica Cheng (github: lockeanddemosthenes || discord: Locrius 光复香港#9567)
+ * @created February 17, 2020
+ * @updated February 17, 2020
+ */
 
 public class WeaponInfo {
 	//The variables that get put in when creating a weapon

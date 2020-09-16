@@ -8,8 +8,8 @@ Armorslayer			false 8 80 0 11
 Armorslayer+			false 8 100 5 11
 SteelSword			false 8 85 0 10
 SteelSword+			false 10 85 0 10
-KillingEdge			false 8 85 25 10
-KillingEdge+			false 9 85 35 10
+KillingEdge			false 6 85 25 12
+KillingEdge+			false 8 85 35 12
 LevinSword			true 9 70 0 9
 LevinSword+			true 9 70 0 8
 VeninEdge			false 5 90 0 6
@@ -30,8 +30,8 @@ Horseslayer			false 8 70 0 13
 Horseslayer+			false 8 90 5 13
 SteelLance			false 9 75 0 11
 SteelLance+			false 11 75 0 11
-KillerLance			false 9 80 25 11
-KillerLance+			false 10 80 35 11
+KillerLance			false 8 80 25 13
+KillerLance+			false 9 80 35 13
 ShortSpear			false 5 75 0 10
 ShortSpear+			false 6 75 0 10
 VeninLance			false 6 80 0 7
@@ -56,8 +56,8 @@ HandAxe				false 4 70 0 10
 HandAxe+			false 5 70 0 10
 SteelAxe			false 11 65 0 12
 SteelAxe+			false 13 65 0 12
-KillerAxe			false 11 70 25 12
-KillerAxe+			false 12 70 35 12
+KillerAxe			false 10 70 25 14
+KillerAxe+			false 11 70 35 14
 ShortAxe			false 8 65 0 12
 ShortAxe+			false 9 65 0 12
 VeninAxe			false 8 70 0 18
@@ -80,8 +80,8 @@ SteelBow			false 9 80 0 11
 SteelBow+			false 11 80 0 10
 Longbow				false 9 70 0 13
 Longbow+			false 11 70 0 13
-KillerBow			false 9 80 25 11
-KillerBow+			false 11 80 35 11
+KillerBow			false 8 80 25 12
+KillerBow+			false 9 80 35 12
 VeninBow			false 6 85 0 6
 VeninBow+			false 7 95 0 6
 SilverBow			false 12 75 0 9
@@ -132,4 +132,5 @@ DarkSpikesT			true 13 80 0 11
 AgneasArrow			true 16 70 5 13
 HadesΩ				true 18 65 10 16
 Thunderbrand			false 13 70 10 7
+ScytheOfSariel			false 10 100 30 06
 None				false 0 70 0 0

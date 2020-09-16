@@ -1,0 +1,9 @@
+WrathStrike			05 10 00 00 false No effect
+Grounder			03 20 05 00 false Mtx3 vs. flying
+BaneOfMonsters		06 00 10 00 false Mtx3 vs. monsters
+HazeSlice			02 00 00 30 false No effect
+Hexblade			07 10 00 00 true Mag-based dmg
+Sunder				04 00 15 00 false No effect
+Soulblade			02 10 00 00 true Mag-based dmg, mt+(res/3)
+Windsweep			03 20 10 00 false Prevents counterattack
+FinesseBlade		02 00 00 10 false Mt + (dex/3)

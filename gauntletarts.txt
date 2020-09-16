@@ -1,0 +1,9 @@
+FadingBlow		06 10 00 30 false Moves 1 space back after combat
+RushingBlow		07 20 00 10 false Moves 1 space past foe after combat
+DrainingBlow		05 20 00 00 false Restores 50%dmg HP
+Bombard			03 00 10 00 false Two consecutive hits
+One-TwoPunch		08 20 00 00 false Guaranteed follow-up
+NimbleCombo		04 00 00 20 false Two consecutive hits
+MonsterCrusher		13 10 10 00 false Mtx3 vs. monsters
+MysticBlow		10 10 00 00 true Mag-based dmg
+MightyBlow		10 -4 20 00 false No effect
