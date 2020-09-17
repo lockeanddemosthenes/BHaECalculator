@@ -1,82 +1,82 @@
-Ahab 30 15 13 22 16 13 11 10 12 0 4
-Alois 53 30 8 12 16 13 19 8 16 2 10
-Alyse 31 12 19 15 13 12 14 14 12 6 4
-Annette 29 7 22 10 11 10 8 14 8 6 2
-Arvyn 31 20 10 11 14 10 13 8 8 0 2
-Ashe 30 15 6 12 12 10 12 9 9 3 2
-Ashley 29 18 21 15 10 11 13 13 9 6 4
-Balthus	30 18 7 12 13 11 12 10 11 3 4
-Banquo 29 10 11 9 8 6 11 9 6 0 0
-Bernadetta 31 15 7 15 13 8 9 5 7 3 2
-Briar 31 16 9 17 21 10 13 12 11 0 4
-Byleth 31 23 9 19 15 9 16 11 10 0 4
-Casimir 25 9 7 9 12 8 13 7 6 0 0
-Caspar 26 13 3 8 6 8 10 9 4 4 3
-Caster 29 14 8 12 14 18 9 12 7 6 0
-Catherine 47 26 10 18 32 12 17 8 10 0 22
-Celestyna 32 15 14 10 10 15 10 10 5 4 7
-Claude 32 21 7 16 20 15 15 13 14 3 2
-Constance 31 5 21 11 18 7 13 12 7 6 0
-Curan 19 18 2 13 8 7 11 4 8 2 4
-Cyril 34 17 7 15 14 11 12 9 9 2 4
-Dahlia 30 9 20 11 15 10 11 12 8 6 4
-Dedue 31 13 4 6 10 6 13 6 11 2 4
-Dimitri 32 18 4 13 12 9 13 9 9 1 10
-Dorothea 27 6 16 7 9 7 5 11 11 5 0
-Edelgard 29 18 6 5 8 5 6 4 10 2 4
-Emaline 25 5 10 12 10 4 7 10 8 5 0
-Emilie 26 14 9 15 11 9 10 11 8 2 10
-Esme 28 14 4 15 12 7 11 9 5 2 4
-Felix 30 26 8 9 15 7 13 10 6 0 10
-Ferdinand 33 17 8 12 16 9 15 12 12 1 2
-Finley 29 21 8 20 19 11 16 13 13 1 10
-Flayn 28 8 15 13 9 8 7 22 16 1 0
-Fritz 27 13 10 13 17 9 9 10 5 0 4
-Gatekeeper 30 13 7 10 11 10 13 4 14 1 2
-Hanneman 30 11 22 16 12 5 10 14 6 6 2
-Hapi 29 10 14 10 10 7 11 12 7 6 4
-Hilda 38 22 7 11 13 11 10 10 13 2 4
-Hubert 28 6 23 11 12 13 16 15 6 6 4
-Ignatz 34 11 8 18 19 16 15 18 10 3 10
-Ingrid 33 13 11 13 13 14 14 14 11 1 2
-Jeritza 47 22 17 18 18 12 19 21 5 1 24
-Jorien 24 5 7 9 14 9 7 5 9 0 4
-Lavinia 28 8 15 9 15 11 13 10 13 6 4
-Layla 32 14 18 15 15 12 11 14 14 6 0
-Leonie 31 15 10 16 16 13 12 14 12 1 2
-Linhardt 28 5 17 6 11 8 8 10 5 5 0
-Lorenz 29 9 9 8 8 7 9 8 4 6 0
-Lucy 38 22 10 16 14 9 20 17 10 1 2
-Lysithea 28 7 20 14 15 10 8 13 11 6 0
-Manuela	35 14 15 15 16 12 9 19 15 5 1
-Marianne 28 9 18 11 10 13 10 13 10 5 0
-Matilda 34 14 14 15 16 11 14 14 10 6 0
-Mercedes 30 8 19 12 15 11 15 17 10 5 0
-Mysa 27 13 10 11 12 8 11 9 12 3 2
-Olvaerr 27 5 11 8 10 9 7 10 11 6 2
-Percy 24 12 11 11 12 8 9 11 7 1 2
-Petra 33 14 8 13 14 12 10 10 9 0 4
-Raphael 31 12 3 7 8 6 11 8 4 4 3
-Rowan 31 12 11 10 15 10 11 12 12 1 2
-Sabella	28 14 5 16 15 15 13 6 8 5 1
-Selena 36 19 4 16 13 12 21 18 11 1 2
-Seteth 45 28 13 19 20 11 21 8 18 1 8
-Shamir 33 19 8 26 14 20 12 8 10 3 2
-Silver 25 20 18 12 20 5 13 14 13 5 0
-Soleil 20 12 18 5 9 8 5 6 14 6 0
-Sylvain	32 16 9 13 12 7 10 6 11 5 1
-Thyra 30 17 8 15 14 11 15 15 12 1 2
-Tobias 32 18 10 13 13 11 11 10 10 1 2
-Veriko 26 5 20 16 16 10 10 7 10 6 0
-William	24 15 9 11 9 8 11 11 7 5 1
-Yuri 28 14 9 9 11 10 8 9 11 0 4
-Zegrath 22 14 13 14 19 5 9 10 10 4 3
-Zero 30 20 5 14 20 9 15 7 14 0 4
-Boss 40 10 23 15 12 13 13 13 14 5 1
-Myrmidon 30 16 8 13 18 13 13 9 6 5 1
-Fighter 30 18 8 12 13 10 16 8 6 5 1
-Soldier 30 14 8 18 16 13 13 9 10 5 1
-Archer 30 16 8 18 12 13 13 9 6 5 1
-Mage 30 8 17 13 14 11 9 13 6 5 1
-Priest 30 8 16 13 12 12 10 13 6 5 1
-DarkMage 30 8 20 13 11 14 8 12 6 5 1
+Ahab 30 15 13 22 16 13 11 10 12 0 4 Never Reveal Your Secret - Half the overkill damage to an enemy unit will heal this unit.
+Alois 53 30 8 12 16 13 19 8 16 2 10 Compassion - Rally grants ally Lck +8.
+Alyse 31 12 19 15 13 12 14 14 12 6 4 Macabre Encouragement - Mag/Res +2 for one turn after defeating an enemy unit.
+Annette 29 7 22 10 11 10 8 14 8 6 2 Perseverance - Rally grants ally Str +4.
+Arvyn 31 20 10 11 14 10 13 8 8 0 2 Dauntless - While this unit has 2+ enemies and no allies within 2 spaces, +10 Avo and +3 Mt.
+Ashe 30 15 6 12 12 10 12 9 9 3 2 Lockpick - Can open locks and chests without keys.
+Ashley 29 18 21 15 10 11 13 13 9 6 4 Adapt and Overcome - After taking a physical attack, +2 Def. After a magical attack, +2 Res. Only one active at a time. Lasts one turn.
+Balthus	30 18 7 12 13 11 12 10 11 3 4 King of Grappling - Str/Def +6 when HP ≤ 50%.
+Banquo 29 10 11 9 8 6 11 9 6 0 0 Disillusioned Belief - When HP < 50%, healing restores 3 less HP, but Mt +3.
+Bernadetta 31 15 7 15 13 8 9 5 7 3 2 Persecution Complex - When HP is not full, Mt +5.
+Briar 31 16 9 17 21 10 13 12 11 0 4 Professor's Guidance - +20% XP gained to unit and adjacent allies.
+Byleth 31 23 9 19 15 9 16 11 10 0 4 Professor's Guidance - +20% XP gained to unit and adjacent allies.
+Casimir 25 9 7 9 12 8 13 7 6 0 0 Keep Me Running, Scared - Spd +2 to adjacent allies.
+Caspar 26 13 3 8 6 8 10 9 4 4 3 Born Fighter - -10 Avo to adjacent foes.
+Caster 29 14 8 12 14 18 9 12 7 6 0 Numbers Against Them - +10 hit when a battalion is deployed.
+Catherine 47 26 10 18 32 12 17 8 10 0 22 Fighting Spirit - -5 dmg taken when no battalion.
+Celestyna 32 15 14 10 10 15 10 10 5 4 7 One Step Ahead - Lck% (15) of countering before the enemy attacks.
+Claude 32 21 7 16 20 15 15 13 14 3 2 Leicester Lineage - +20% XP gained.
+Constance 31 5 21 11 18 7 13 12 7 6 0 Circadian Beat - Str/Mag +3 when indoors, Def/Res +3 when outdoors.
+Curan 19 18 2 13 8 7 11 4 8 2 4 ??? - no personal atm
+Cyril 34 17 7 15 14 11 12 9 9 2 4 Aptitude - Permanent +2 (up to 10) to stat increase number.
+Dahlia 30 9 20 11 15 10 11 12 8 6 4 Motherly - Mt/Def +3 to adjacent allies when their health < 50%.
+Dedue 31 13 4 6 10 6 13 6 11 2 4 Staunch Shield - Def +4 for one turn if unit waits.
+Dimitri 32 18 4 13 12 9 13 9 9 1 10 Royal Lineage - +20% XP gained.
+Dorothea 27 6 16 7 9 7 5 11 11 5 0 Songstress - Restores adjacent allies' HP by 10% at the start of each turn.
+Edelgard 29 18 6 5 8 5 6 4 10 2 4 Imperial Lineage - +20% XP gained.
+Emaline 25 5 10 12 10 4 7 10 8 5 0 Selfless - Unit may sacrifice HP to add to her healing at a 1:1 rate.
+Emilie 26 14 9 15 11 9 10 11 8 2 10 Distaste - Mt +3 against male enemies.
+Esme 28 14 4 15 12 7 11 9 5 2 4 Snacktime Preparation - If unit waits, restores 10% HP.
+Felix 30 26 8 9 15 7 13 10 6 0 10 Lone Wolf - Mt +5 when no battalion.
+Ferdinand 33 17 8 12 16 9 15 12 12 1 2 Confidence - Hit/Avo +15 when HP is full.
+Finley 29 21 8 20 19 11 16 13 13 1 10 Disarm With Charm - Avo/Hit -10 to adjacent enemies.
+Flayn 28 8 15 13 9 8 7 22 16 1 0 Lily's Poise - -3 dmg to adjacent allies.
+Fritz 27 13 10 13 17 9 9 10 5 0 4 Lone Wolf - Mt +5 when no battalion.
+Gatekeeper 30 13 7 10 11 10 13 4 14 1 2 ??? - no personal atm
+Hanneman 30 11 22 16 12 5 10 14 6 6 2 Professor's Guidance - +20% XP gained to unit and adjacent allies.
+Hapi 29 10 14 10 10 7 11 12 7 6 4 Monstrous Appeal - Mtx3 vs. monsters; more likely to be targeted.
+Hilda 38 22 7 11 13 11 10 10 13 2 4 Advocate - +3 dmg dealt by adjacent male allies.
+Hubert 28 6 23 11 12 13 16 15 6 6 4 Officer Duty - Gambit Mt +5.
+Ignatz 34 11 8 18 19 16 15 18 10 3 10 Watchful Eye - Hit +20.
+Ingrid 33 13 11 13 13 14 14 14 11 1 2 Lady Knight - Mt +3, Hit +5 when using gambits.
+Jeritza 47 22 17 18 18 12 19 21 5 1 24 Murderous Intent - Hit +20 when initiating combat.
+Jorien 24 5 7 9 14 9 7 5 9 0 4 Pocket Sand - Spd +5 when unit is not at full HP.
+Lavinia 28 8 15 9 15 11 13 10 13 6 4 Arcane Intuition - Avo +10 when enemy initiates combat.
+Layla 32 14 18 15 15 12 11 14 14 6 0 Cheerful Spirit - Rally grants ally Mag/Str +3.
+Leonie 31 15 10 16 16 13 12 14 12 1 2 Rivalry - Dmg dealt +2, dmg received -2 when adjacent to male ally.
+Linhardt 28 5 17 6 11 8 8 10 5 5 0 Catnap - If unit waits, restores 10% HP.
+Lorenz 29 9 9 8 8 7 9 8 4 6 0 Distinguished House - Mt +2 when a battalion is deployed.
+Lucy 38 22 10 16 14 9 20 17 10 1 2 Three's a Crowd - If unit has exactly one adjacent ally at the start of the turn, -3 dmg taken, and ally restores 10% HP.
+Lysithea 28 7 20 14 15 10 8 13 11 6 0 Mastermind - x2 skills XP from combat.
+Manuela	35 14 15 15 16 12 9 19 15 5 1 Infirmary Master - Crit Avo +10 to adjacent allies.
+Marianne 28 9 18 11 10 13 10 13 10 5 0 Animal Friend - Restores 20% HP at start of turn when adjacent to horseback or flying ally.
+Matilda 34 14 14 15 16 11 14 14 10 6 0 Wiped Out - 1.5x XP when dealing finishing blow.
+Mercedes 30 8 19 12 15 11 15 17 10 5 0 Live to Serve - When healing allies, unit is healed by the same amount.
+Mysa 27 13 10 11 12 8 11 9 12 3 2 Impact - Crit +5 when using gambits.
+Olvaerr 27 5 11 8 10 9 7 10 11 6 2 Song of Rest - Restores adjacent allies' HP by 10% at the start of each turn.
+Percy 24 12 11 11 12 8 9 11 7 1 2 Stitched Up - +25% HP when unit is healed.
+Petra 33 14 8 13 14 12 10 10 9 0 4 Hunter's Boon - Crit +20 when foe's HP < 50%.
+Raphael 31 12 3 7 8 6 11 8 4 4 3 Goody Basket - Lck% chance of regaining 10% HP at start of turn.
+Rowan 31 12 11 10 15 10 11 12 12 1 2 Exotic Dance - If the unit isn’t mounted, they may Dance to refresh allies.
+Sabella	28 14 5 16 15 15 13 6 8 5 1 Lockpick - Can open locks and chests without keys.
+Selena 36 19 4 16 13 12 21 18 11 1 2 Guardian's Vigil - While HP > 50%, enemies cannot pass through adjacent tiles.
+Seteth 45 28 13 19 20 11 21 8 18 1 8 Guardian - Mt +3 to adjacent female allies during combat.
+Shamir 33 19 8 26 14 20 12 8 10 3 2 Survival Instinct - Str/Mag/Dex/Spd +4 for one turn after initiating combat and defeating foe.
+Silver 25 20 18 12 20 5 13 14 13 5 0 Professor's Guidance - +20% XP gained to unit and adjacent allies.
+Soleil 20 12 18 5 9 8 5 6 14 6 0 Natural-Born Leader - Gambit Mt +5.
+Sylvain	32 16 9 13 12 7 10 6 11 5 1 Philanderer - Dmg dealt +2, dmg receieved -2 when adjacent to female ally.
+Thyra 30 17 8 15 14 11 15 15 12 1 2 Martyr - While HP < 25%, crit +20 to adjacent allies.
+Tobias 32 18 10 13 13 11 11 10 10 1 2 Optimist - Avo/Hit +10, Mt +3 when initiating combat while adjacent to more than one foe.
+Veriko 26 5 20 16 16 10 10 7 10 6 0 Nine Lives - When HP > 50%, survive any OHKO with 1 HP.
+William	24 15 9 11 9 8 11 11 7 5 1 Breath of Life - After the unit initiates combat, heal all adjacent allies by 5 HP.
+Yuri 28 14 9 9 11 10 8 9 11 0 4 Honorable Spirit - Atk +3 when in combat with an adjacent foe with no adjacent allies.
+Zegrath 22 14 13 14 19 5 9 10 10 4 3 Strike Seeker - Mt +3, Avo +10 when HP < 50%.
+Zero 30 20 5 14 20 9 15 7 14 0 4 Shining Ninja - If unit waits, Mt +2 to adjacent allies. If no adjacent allies, Mt +3 to self.
+Boss 40 10 23 15 12 13 13 13 14 5 1 No personal skill
+Myrmidon 30 16 8 13 18 13 13 9 6 5 1 No personal skill
+Fighter 30 18 8 12 13 10 16 8 6 5 1 No personal skill
+Soldier 30 14 8 18 16 13 13 9 10 5 1 No personal skill
+Archer 30 16 8 18 12 13 13 9 6 5 1 No personal skill
+Mage 30 8 17 13 14 11 9 13 6 5 1 No personal skill
+Priest 30 8 16 13 12 12 10 13 6 5 1 No personal skill
+DarkMage 30 8 20 13 11 14 8 12 6 5 1 No personal skill

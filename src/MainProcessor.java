@@ -22,11 +22,9 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -186,6 +184,7 @@ public class MainProcessor {
 			int cha = unitInput.nextInt();
 			int wepTyp = unitInput.nextInt();
 			int wepInd = unitInput.nextInt();
+			String personal = unitInput.nextLine();
 			WeaponInfo wepID = null;
 			
 			switch(wepTyp) {
@@ -212,7 +211,7 @@ public class MainProcessor {
 					break;
 			}
 
-			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID);
+			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID, personal);
 			units = addUnit(units, newUnit);
 			unitNames = addName(unitNames, name);
 		}
@@ -989,7 +988,7 @@ public class MainProcessor {
 			frameMain.getContentPane().add(panelBattleOutput, BorderLayout.WEST);
 			frameMain.pack();
 			frameMain.setLocationRelativeTo(null);
-			frameMain.setSize(680, 300);
+			frameMain.setSize(750, 300);
 			
 			frameWeaponSelect.setLocationRelativeTo(null);
 			frameWeaponSelect.add(panelWeaponSelect);
@@ -1079,15 +1078,16 @@ public class MainProcessor {
             int oldDef = unitArray[unitInd].def;
             int oldRes = unitArray[unitInd].res;
             int oldCha = unitArray[unitInd].cha;
+            String oldPersonal = unitArray[unitInd].personal;
             int oldWeaponType = unitArray[unitInd].wepTypeInd;
             int oldWeaponID = unitArray[unitInd].wepInd;
             int newWeaponType = newWepTyp;
             int newWeaponID = newWepID;
 
             String oldString = oldName + " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck + " "
-            		+ oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID;
+            		+ oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID + " " + oldPersonal;
             String newString = oldName + " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck + " "
-            		+ oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID;
+            		+ oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID + " " + oldPersonal;
             
             String newContent = oldContent.replaceAll(oldString, newString);
             
@@ -1141,7 +1141,9 @@ public class MainProcessor {
 				+ mtFinal
 				+ "\nHit: " + hitFinal
 				+ "\nCrit: " + critFinal
-				+ "\nCrit Mt: " + critDmg;
+				+ "\nCrit Mt: " + critDmg
+				+ "\nAttacker Personal:" + attacker.personal
+				+ "\nTarget Personal:" + target.personal;
 		
 		return results;
 	}
@@ -1168,7 +1170,9 @@ public class MainProcessor {
 				+ "\nHit: " + hitFinal
 				+ "\nCrit: " + critFinal
 				+ "\nCrit Mt: " + critDmg
-				+ "\nEffect: " + combatArt.note;
+				+ "\nEffect: " + combatArt.note
+				+ "\nAttacker Personal:" + attacker.personal
+				+ "\nTarget Personal:" + target.personal;
 		
 		return results;
 	}
