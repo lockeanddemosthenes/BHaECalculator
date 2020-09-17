@@ -21,6 +21,8 @@ public class UnitInfo {
 	int res;
 	int cha;
 	int wepInd;
+	int wepTypeInd;
+	WeaponInfo wep;
 	
 	String wepName;
 	boolean magEqp;
@@ -32,8 +34,7 @@ public class UnitInfo {
 	int atkSpd;
 	int genAvo;
 	
-	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int c,
-			WeaponInfo w) {
+	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int c, int wTypInd, int wInd, WeaponInfo w) {
 
 		//The variables that get put in when creating a unit
 		name = n;
@@ -46,7 +47,9 @@ public class UnitInfo {
 		def = defense;
 		res = r;
 		cha = c;
-		WeaponInfo wep = w;
+		wep = w;
+		wepTypeInd = wTypInd;
+		wepInd = wInd;
 		wepName = wep.wepName;
 		magEqp = wep.magEqp;
 		
@@ -57,14 +60,44 @@ public class UnitInfo {
 		int wepWt = wep.wt;
 		int wepAdjWt = wepWt - (int)(str/5);
 		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
-
-		magAtk = wepMt + mag;
-		physAtk = wepMt + str;
-		hit = wepHit + dex + lck/2;
-		crit = wepCrit + dex + lck/2;
-		critAvo = lck;
-		genAvo = lck + atkSpd/2;
-		atkSpd = spd - wepAdjWt;
-		atkSpd = atkSpd < 0? 0 : atkSpd;
+		
+		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0)) {
+			magAtk = wepMt + mag/3;
+		} else {
+			magAtk = wepMt + mag;
+			physAtk = wepMt + str;
+			hit = wepHit + dex + lck/2;
+			crit = wepCrit + dex + lck/2;
+			critAvo = lck;
+			genAvo = lck + atkSpd/2;
+			atkSpd = spd - wepAdjWt;
+			atkSpd = atkSpd < 0? 0 : atkSpd;
+		}
+	}
+	
+	public void changeUnitWep(WeaponInfo[] weptype, int wInd) {
+		this.wep = weptype[wInd];
+		wepName = wep.wepName;
+		magEqp = wep.magEqp;
+		
+		int wepMt = wep.mtBase;
+		int wepHit = wep.hitBase;
+		int wepCrit = wep.critBase;
+		int wepWt = wep.wt;
+		int wepAdjWt = wepWt - (int)(str/5);
+		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
+		
+		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0)) {
+			magAtk = wepMt + mag/3;
+		} else {
+			magAtk = wepMt + mag;
+			physAtk = wepMt + str;
+			hit = wepHit + dex + lck/2;
+			crit = wepCrit + dex + lck/2;
+			critAvo = lck;
+			genAvo = lck + atkSpd/2;
+			atkSpd = spd - wepAdjWt;
+			atkSpd = atkSpd < 0? 0 : atkSpd;
+		}
 	}
 }

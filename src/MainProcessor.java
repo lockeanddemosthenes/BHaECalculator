@@ -22,31 +22,62 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 import javax.swing.*;
+import java.io.BufferedReader;
 
 public class MainProcessor {
 	final static JTextArea resultPanel = new JTextArea();
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
+		int inputCounter = 0;
+		
+//		FileWriter weaponWriter = new FileWriter("weapons.txt");
+//		try {
+//		    weaponWriter.write("Files in Java might be tricky, but it is fun enough!");
+//		    weaponWriter.close();
+//		} catch (IOException e1) {
+//			e1.printStackTrace();
+//		}
 		
 		Scanner weaponInput = new Scanner(new File("weapons.txt"));
 		Scanner unitInput = new Scanner(new File("units.txt"));
-		Scanner swordArtInput = new Scanner(new File("swordarts.txt"));
-		Scanner lanceArtInput = new Scanner(new File("lancearts.txt"));
-		Scanner axeArtInput = new Scanner(new File("axearts.txt"));
-		Scanner bowArtInput = new Scanner(new File("bowarts.txt"));
-		Scanner gauntletArtInput = new Scanner(new File("gauntletarts.txt"));
+		Scanner artInput = new Scanner(new File("arts.txt"));
 		
-		final String swordString = "Sword";
-	    final String lanceString = "Lance";
-	    final String axeString = "Axe";
-	    final String bowString = "Bow";
-	    final String gauntletString = "Gauntlet";
+		WeaponInfo[] swords = new WeaponInfo[0];
+		WeaponInfo[] lances = new WeaponInfo[0];
+		WeaponInfo[] axes = new WeaponInfo[0];
+		WeaponInfo[] bows = new WeaponInfo[0];
+		WeaponInfo[] gauntlets = new WeaponInfo[0];
+		WeaponInfo[] faith = new WeaponInfo[0];
+		WeaponInfo[] reason = new WeaponInfo[0];
+		String[] swordsNames = new String[0];
+		String[] lancesNames = new String[0];
+		String[] axesNames = new String[0];
+		String[] bowsNames = new String[0];
+		String[] gauntletsNames = new String[0];
+		String[] faithNames = new String[0];
+		String[] reasonNames = new String[0];
+		
+		UnitInfo[] units = new UnitInfo[0];
+		ArtInfo[] swordArts = new ArtInfo[0];
+		ArtInfo[] lanceArts = new ArtInfo[0];
+		ArtInfo[] axeArts = new ArtInfo[0];
+		ArtInfo[] bowArts = new ArtInfo[0];
+		ArtInfo[] gauntletArts = new ArtInfo[0];
+		String[] unitNames = new String[0];
+		String[] swordArtNames = new String[0];
+		String[] lanceArtNames = new String[0];
+		String[] axeArtNames = new String[0];
+		String[] bowArtNames = new String[0];
+		String[] gauntletArtNames = new String[0];
 		
 		// parse weapon list
-		WeaponInfo[] weapons = new WeaponInfo[0];
 		while (weaponInput.hasNext()) {
 			String wepName = weaponInput.next();
 			boolean magEqp = weaponInput.nextBoolean();
@@ -54,15 +85,94 @@ public class MainProcessor {
 			int hitBase = weaponInput.nextInt();
 			int critBase = weaponInput.nextInt();
 			int wt = weaponInput.nextInt();
-
-			WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt);
-			weapons = addWeapon(weapons, newWeapon);
+			int weaponType = 0;
+			inputCounter++;
+			
+			if ((1 <= inputCounter && inputCounter <= 22) || inputCounter == 134) {
+				weaponType = 01;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				swords = addWeapon(swords, newWeapon);
+				swordsNames = addName(swordsNames, wepName);
+			} else if ((23 <= inputCounter && inputCounter <= 46) || inputCounter == 135) {
+				weaponType = 02;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				lances = addWeapon(lances, newWeapon);
+				lancesNames = addName(lancesNames, wepName);
+			} else if (47 <= inputCounter && inputCounter <= 72) {
+				weaponType = 03;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				axes = addWeapon(axes, newWeapon);
+				axesNames = addName(axesNames, wepName);
+			} else if (73 <= inputCounter && inputCounter <= 92) {
+				weaponType = 04;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				bows = addWeapon(bows, newWeapon);
+				bowsNames = addName(bowsNames, wepName);
+			} else if (93 <= inputCounter && inputCounter <= 105 || inputCounter == 136) {
+				weaponType = 05;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				gauntlets = addWeapon(gauntlets, newWeapon);
+				gauntletsNames = addName(gauntletsNames, wepName);
+			} else if (106 <= inputCounter && inputCounter <= 111) {
+				weaponType = 06;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				faith = addWeapon(faith, newWeapon);
+				faithNames = addName(faithNames, wepName);
+			} else {
+				weaponType = 07;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				reason = addWeapon(reason, newWeapon);
+				reasonNames = addName(reasonNames, wepName);
+			}
 		}
 		weaponInput.close();
+		final WeaponInfo[] swordsFinal = new WeaponInfo[swords.length];
+		final WeaponInfo[] lancesFinal = new WeaponInfo[lances.length];
+		final WeaponInfo[] axesFinal = new WeaponInfo[axes.length];
+		final WeaponInfo[] bowsFinal = new WeaponInfo[bows.length];
+		final WeaponInfo[] gauntletsFinal = new WeaponInfo[gauntlets.length];
+		final WeaponInfo[] faithFinal = new WeaponInfo[faith.length];
+		final WeaponInfo[] reasonFinal = new WeaponInfo[reason.length];
+		final String[] swordsNamesFinal = new String[swordsNames.length];
+		final String[] lancesNamesFinal = new String[lancesNames.length];
+		final String[] axesNamesFinal = new String[axesNames.length];
+		final String[] bowsNamesFinal = new String[bowsNames.length];
+		final String[] gauntletsNamesFinal = new String[gauntletsNames.length];
+		final String[] faithNamesFinal = new String[faithNames.length];
+		final String[] reasonNamesFinal = new String[reasonNames.length];
+		
+		for (int i = 0; i < swordsNames.length; i++) {
+			swordsFinal[i] = swords[i];
+			swordsNamesFinal[i] = swordsNames[i];
+		}
+		for (int i = 0; i < lancesNames.length; i++) {
+			lancesFinal[i] = lances[i];
+			lancesNamesFinal[i] = lancesNames[i];
+		}
+		for (int i = 0; i < axesNames.length; i++) {
+			axesFinal[i] = axes[i];
+			axesNamesFinal[i] = axesNames[i];
+		}
+		for (int i = 0; i < bowsNames.length; i++) {
+			bowsFinal[i] = bows[i];
+			bowsNamesFinal[i] = bowsNames[i];
+		}
+		for (int i = 0; i < gauntletsNames.length; i++) {
+			gauntletsFinal[i] = gauntlets[i];
+			gauntletsNamesFinal[i] = gauntletsNames[i];
+		}
+		for (int i = 0; i < faithNames.length; i++) {
+			faithFinal[i] = faith[i];
+			faithNamesFinal[i] = faithNames[i];
+		}
+		for (int i = 0; i < reasonNames.length; i++) {
+			reasonFinal[i] = reason[i];
+			reasonNamesFinal[i] = reasonNames[i];
+		}
+		
+		inputCounter = 0;
 		
 		// parse unit list
-		UnitInfo[] units = new UnitInfo[0];
-		String[] unitNames = new String[0];
 		while (unitInput.hasNext()) {
 			String name = unitInput.next();
 			int hp = unitInput.nextInt();
@@ -74,11 +184,35 @@ public class MainProcessor {
 			int def = unitInput.nextInt();
 			int res = unitInput.nextInt();
 			int cha = unitInput.nextInt();
+			int wepTyp = unitInput.nextInt();
 			int wepInd = unitInput.nextInt();
-			wepInd = wepInd - 1;
-			WeaponInfo wepID = weapons[wepInd];
+			WeaponInfo wepID = null;
+			
+			switch(wepTyp) {
+				case 0:
+					wepID = swords[wepInd];
+					break;
+				case 1:
+					wepID = lances[wepInd];
+					break;
+				case 2:
+					wepID = axes[wepInd];
+					break;
+				case 3:
+					wepID = bows[wepInd];
+					break;
+				case 4:
+					wepID = gauntlets[wepInd];
+					break;
+				case 5:
+					wepID = faith[wepInd];
+					break;
+				case 6:
+					wepID = reason[wepInd];
+					break;
+			}
 
-			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepID);
+			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID);
 			units = addUnit(units, newUnit);
 			unitNames = addName(unitNames, name);
 		}
@@ -91,123 +225,68 @@ public class MainProcessor {
 			unitNameList[i] = unitNames[i];
 		}
 		
-		// parse sword art list
-		ArtInfo[] swordArts = new ArtInfo[0];
-		String[] swordArtNames = new String[0];
-		while (swordArtInput.hasNext()) {
-			String artName = swordArtInput.next();
-			int artMt = swordArtInput.nextInt();
-			int artHit = swordArtInput.nextInt();
-			int artCrit = swordArtInput.nextInt();
-			int artAvo = swordArtInput.nextInt();
-			boolean artMagEqp = swordArtInput.nextBoolean();
-			String artNote = swordArtInput.nextLine();
-
+		// parse art list
+		while (artInput.hasNext()) {
+			String artName = artInput.next();
+			int artMt = artInput.nextInt();
+			int artHit = artInput.nextInt();
+			int artCrit = artInput.nextInt();
+			int artAvo = artInput.nextInt();
+			boolean artMagEqp = artInput.nextBoolean();
+			String artNote = artInput.nextLine();
 			ArtInfo newArt = new ArtInfo(artName, artMt, artHit, artCrit, artAvo, artMagEqp, artNote);
-			swordArts = addArt(swordArts, newArt);
-			swordArtNames = addName(swordArtNames, artName);
+			inputCounter++;
+			
+			if(1 <= inputCounter && inputCounter <= 9) {
+				swordArts = addArt(swordArts, newArt);
+				swordArtNames = addName(swordArtNames, artName);
+			} else if (10 <= inputCounter && inputCounter <= 19) {
+				lanceArts = addArt(lanceArts, newArt);
+				lanceArtNames = addName(lanceArtNames, artName);
+			} else if (20 <= inputCounter && inputCounter <= 28) {
+				axeArts = addArt(axeArts, newArt);
+				axeArtNames = addName(axeArtNames, artName);
+			} else if (29 <= inputCounter && inputCounter <= 38) {
+				bowArts = addArt(bowArts, newArt);
+				bowArtNames = addName(bowArtNames, artName);
+			} else {
+				gauntletArts = addArt(gauntletArts, newArt);
+				gauntletArtNames = addName(gauntletArtNames, artName);
+			}
 		}
-		swordArtInput.close();
+		artInput.close();
+		
 		final ArtInfo[] swordArtsFinal = new ArtInfo[swordArts.length];
 		final String[] swordArtsNamesFinal = new String[swordArtNames.length];
+		final ArtInfo[] lanceArtsFinal = new ArtInfo[lanceArts.length];
+		final String[] lanceArtsNamesFinal = new String[lanceArtNames.length];
+		final ArtInfo[] axeArtsFinal = new ArtInfo[axeArts.length];
+		final String[] axeArtsNamesFinal = new String[axeArtNames.length];
+		final ArtInfo[] bowArtsFinal = new ArtInfo[bowArts.length];
+		final String[] bowArtsNamesFinal = new String[bowArtNames.length];
+		final ArtInfo[] gauntletArtsFinal = new ArtInfo[gauntletArts.length];
+		final String[] gauntletArtsNamesFinal = new String[gauntletArtNames.length];
 		
 		for (int i = 0; i < swordArtsFinal.length; i++) {
 			swordArtsFinal[i] = swordArts[i];
 			swordArtsNamesFinal[i] = swordArtNames[i];
 		}
 		
-		// parse lance art list
-		ArtInfo[] lanceArts = new ArtInfo[0];
-		String[] lanceArtNames = new String[0];
-		while (lanceArtInput.hasNext()) {
-			String artName = lanceArtInput.next();
-			int artMt = lanceArtInput.nextInt();
-			int artHit = lanceArtInput.nextInt();
-			int artCrit = lanceArtInput.nextInt();
-			int artAvo = lanceArtInput.nextInt();
-			boolean artMagEqp = lanceArtInput.nextBoolean();
-			String artNote = lanceArtInput.nextLine();
-
-			ArtInfo newArt = new ArtInfo(artName, artMt, artHit, artCrit, artAvo, artMagEqp, artNote);
-			lanceArts = addArt(lanceArts, newArt);
-			lanceArtNames = addName(lanceArtNames, artName);
-		}
-		lanceArtInput.close();
-		final ArtInfo[] lanceArtsFinal = new ArtInfo[lanceArts.length];
-		final String[] lanceArtsNamesFinal = new String[lanceArtNames.length];
-		for (int i = 0; i < lanceArts.length; i++) {
+		for (int i = 0; i < lanceArtsFinal.length; i++) {
 			lanceArtsFinal[i] = lanceArts[i];
 			lanceArtsNamesFinal[i] = lanceArtNames[i];
 		}
 		
-		// parse axe art list
-		ArtInfo[] axeArts = new ArtInfo[0];
-		String[] axeArtNames = new String[0];
-		while (axeArtInput.hasNext()) {
-			String artName = axeArtInput.next();
-			int artMt = axeArtInput.nextInt();
-			int artHit = axeArtInput.nextInt();
-			int artCrit = axeArtInput.nextInt();
-			int artAvo = axeArtInput.nextInt();
-			boolean artMagEqp = axeArtInput.nextBoolean();
-			String artNote = axeArtInput.nextLine();
-
-			ArtInfo newArt = new ArtInfo(artName, artMt, artHit, artCrit, artAvo, artMagEqp, artNote);
-			axeArts = addArt(axeArts, newArt);
-			axeArtNames = addName(axeArtNames, artName);
-		}
-		axeArtInput.close();
-		final ArtInfo[] axeArtsFinal = new ArtInfo[axeArts.length];
-		final String[] axeArtsNamesFinal = new String[axeArtNames.length];
 		for (int i = 0; i < axeArtsFinal.length; i++) {
 			axeArtsFinal[i] = axeArts[i];
 			axeArtsNamesFinal[i] = axeArtNames[i];
 		}
-		
-		// parse bow art list
-		ArtInfo[] bowArts = new ArtInfo[0];
-		String[] bowArtNames = new String[0];
-		while (bowArtInput.hasNext()) {
-			String artName = bowArtInput.next();
-			int artMt = bowArtInput.nextInt();
-			int artHit = bowArtInput.nextInt();
-			int artCrit = bowArtInput.nextInt();
-			int artAvo = bowArtInput.nextInt();
-			boolean artMagEqp = bowArtInput.nextBoolean();
-			String artNote = bowArtInput.nextLine();
-
-			ArtInfo newArt = new ArtInfo(artName, artMt, artHit, artCrit, artAvo, artMagEqp, artNote);
-			bowArts = addArt(bowArts, newArt);
-			bowArtNames = addName(bowArtNames, artName);
-		}
-		bowArtInput.close();
-		final ArtInfo[] bowArtsFinal = new ArtInfo[bowArts.length];
-		final String[] bowArtsNamesFinal = new String[bowArtNames.length];
 		
 		for (int i = 0; i < bowArtsFinal.length; i++) {
 			bowArtsFinal[i] = bowArts[i];
 			bowArtsNamesFinal[i] = bowArtNames[i];
 		}
 		
-		// parse gauntlet art list
-		ArtInfo[] gauntletArts = new ArtInfo[0];
-		String[] gauntletArtNames = new String[0];
-		while (gauntletArtInput.hasNext()) {
-			String artName = gauntletArtInput.next();
-			int artMt = gauntletArtInput.nextInt();
-			int artHit = gauntletArtInput.nextInt();
-			int artCrit = gauntletArtInput.nextInt();
-			int artAvo = gauntletArtInput.nextInt();
-			boolean artMagEqp = gauntletArtInput.nextBoolean();
-			String artNote = gauntletArtInput.nextLine();
-
-			ArtInfo newArt = new ArtInfo(artName, artMt, artHit, artCrit, artAvo, artMagEqp, artNote);
-			gauntletArts = addArt(gauntletArts, newArt);
-			gauntletArtNames = addName(gauntletArtNames, artName);
-		}
-		gauntletArtInput.close();
-		final ArtInfo[] gauntletArtsFinal = new ArtInfo[gauntletArts.length];
-		final String[] gauntletArtsNamesFinal = new String[gauntletArtNames.length];
 		for (int i = 0; i < gauntletArtsFinal.length; i++) {
 			gauntletArtsFinal[i] = gauntletArts[i];
 			gauntletArtsNamesFinal[i] = gauntletArtNames[i];
@@ -226,15 +305,27 @@ public class MainProcessor {
 			JFrame frameSelector = new JFrame ("BHaE Battle Calculator");
 			JFrame frameMain = new JFrame("BHaE Battle Calculator");
 			JFrame frameCombatArt = new JFrame("Combat Art Selection");
+			JFrame frameWeaponSelect = new JFrame("Weapon Select");
 			
 			JPanel panelSelector = new JPanel();
 			JPanel panelBattleSelection = new JPanel();
 			JPanel panelBattleOutput = new JPanel();
+			JPanel panelWeaponSelect = new JPanel();
+			JPanel panelWeaponConfirm = new JPanel();
 			JPanel panelCAWeapon = new JPanel();
 			JPanel panelArtConfirm = new JPanel();
 			
 			JComboBox<String> competitorOne = new JComboBox<>(unitNameList);
 			JComboBox<String> competitorTwo = new JComboBox<>(unitNameList);
+			
+			JComboBox<String> swordsBox = new JComboBox<>(swordsNamesFinal);
+			JComboBox<String> lancesBox = new JComboBox<>(lancesNamesFinal);
+			JComboBox<String> axesBox = new JComboBox<>(axesNamesFinal);
+			JComboBox<String> bowsBox = new JComboBox<>(bowsNamesFinal);
+			JComboBox<String> gauntletsBox = new JComboBox<>(gauntletsNamesFinal);
+			JComboBox<String> faithBox = new JComboBox<>(faithNamesFinal);
+			JComboBox<String> reasonBox = new JComboBox<>(reasonNamesFinal);
+			
 			JComboBox<String> swordArtBox = new JComboBox<>(swordArtsNamesFinal);
 			JComboBox<String> lanceArtBox = new JComboBox<>(lanceArtsNamesFinal);
 			JComboBox<String> axeArtBox = new JComboBox<>(axeArtsNamesFinal);
@@ -245,21 +336,39 @@ public class MainProcessor {
 			JButton buttonGambitCalc = new JButton("Gambit");
 			JButton buttonFight = new JButton("Fight!");
 			JButton buttonFightSwap = new JButton("Swap");
+			JButton buttonWeaponChange = new JButton("Change Weapon");
 			JButton buttonFightCombatArt = new JButton("CA Selected: None");
 			
-			JButton none = new JButton("None");
-			JButton sword = new JButton("Sword");
-			JButton lance = new JButton("Lance");
-			JButton axe = new JButton("Axe");
-			JButton bow = new JButton("Bow");
-			JButton gauntlet = new JButton("Gauntlet");
+			JButton selectSword = new JButton("Sword");
+			JButton selectLance = new JButton("Lance");
+			JButton selectAxe = new JButton("Axe");
+			JButton selectBow = new JButton("Bow");
+			JButton selectGauntlet = new JButton("Gauntlets");
+			JButton selectFaith = new JButton("Faith");
+			JButton selectReason = new JButton("Reason");
 			
-			JButton noneConfirm = new JButton("Confirm");
-			JButton swordConfirm = new JButton("Confirm");
-			JButton lanceConfirm = new JButton("Confirm");
-			JButton axeConfirm = new JButton("Confirm");
-			JButton bowConfirm = new JButton("Confirm");
-			JButton gauntletConfirm = new JButton("Confirm");
+			JButton selectSwordConfirm = new JButton("Confirm");
+			JButton selectLanceConfirm = new JButton("Confirm");
+			JButton selectAxeConfirm = new JButton("Confirm");
+			JButton selectBowConfirm = new JButton("Confirm");
+			JButton selectGauntletConfirm = new JButton("Confirm");
+			JButton selectFaithConfirm = new JButton("Confirm");
+			JButton selectReasonConfirm = new JButton("Confirm");
+			JButton selectWeaponCancel = new JButton("Cancel");
+			
+			JButton artNone = new JButton("None");
+			JButton artSword = new JButton("Sword");
+			JButton artLance = new JButton("Lance");
+			JButton artAxe = new JButton("Axe");
+			JButton artBow = new JButton("Bow");
+			JButton artGauntlet = new JButton("Gauntlet");
+			
+			JButton artNoneConfirm = new JButton("Confirm");
+			JButton artSwordConfirm = new JButton("Confirm");
+			JButton artLanceConfirm = new JButton("Confirm");
+			JButton artAxeConfirm = new JButton("Confirm");
+			JButton artBowConfirm = new JButton("Confirm");
+			JButton artGauntletConfirm = new JButton("Confirm");
 			
 			/**
 			 * COMPONENTS
@@ -299,6 +408,305 @@ public class MainProcessor {
 				}
 			});
 			
+			buttonWeaponChange.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					frameWeaponSelect.setVisible(true);
+				}
+			});
+			
+			selectWeaponCancel.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectSword.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.add(swordsBox, gbc);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.remove(reasonBox);
+					selectSwordConfirm.setVisible(true);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectLance.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.add(lancesBox, gbc);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.remove(reasonBox);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(true);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectAxe.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.add(axesBox, gbc);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.remove(reasonBox);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(true);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectBow.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.add(bowsBox, gbc);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.remove(reasonBox);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(true);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectGauntlet.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.add(gauntletsBox, gbc);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.remove(reasonBox);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(true);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectFaith.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.add(faithBox, gbc);
+					panelWeaponSelect.remove(reasonBox);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(true);
+					selectReasonConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectReason.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.add(reasonBox, gbc);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(true);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectSwordConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 0;
+					int weaponIndex = swordsBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(swordsFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectLanceConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 1;
+					int weaponIndex = lancesBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(lancesFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectAxeConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 2;
+					int weaponIndex = axesBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(axesFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectBowConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 3;
+					int weaponIndex = bowsBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(bowsFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectGauntletConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 4;
+					int weaponIndex = gauntletsBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(gauntletsFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectFaithConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 5;
+					int weaponIndex = faithBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(faithFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
+			selectReasonConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 6;
+					int weaponIndex = reasonBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(reasonFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
 			buttonFightCombatArt.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					frameCombatArt.setVisible(true);
@@ -306,137 +714,125 @@ public class MainProcessor {
 				}
 			});
 			
-			none.addActionListener(new ActionListener() {
+			artNone.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					panelCAWeapon.remove(swordArtBox);
 					panelCAWeapon.remove(lanceArtBox);
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
-					noneConfirm.setVisible(true);
-					swordConfirm.setVisible(false);
-					lanceConfirm.setVisible(false);
-					axeConfirm.setVisible(false);
-					bowConfirm.setVisible(false);
-					gauntletConfirm.setVisible(false);
+					artNoneConfirm.setVisible(true);
+					artSwordConfirm.setVisible(false);
+					artLanceConfirm.setVisible(false);
+					artAxeConfirm.setVisible(false);
+					artBowConfirm.setVisible(false);
+					artGauntletConfirm.setVisible(false);
 				}
 			});
 			
-			sword.addActionListener(new ActionListener() {
+			artSword.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					sword.setActionCommand(swordString);
 					panelCAWeapon.add(swordArtBox, gbc);
 					panelCAWeapon.remove(lanceArtBox);
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
-					noneConfirm.setVisible(false);
-					swordConfirm.setVisible(true);
-					lanceConfirm.setVisible(false);
-					axeConfirm.setVisible(false);
-					bowConfirm.setVisible(false);
-					gauntletConfirm.setVisible(false);
+					artNoneConfirm.setVisible(false);
+					artSwordConfirm.setVisible(true);
+					artLanceConfirm.setVisible(false);
+					artAxeConfirm.setVisible(false);
+					artBowConfirm.setVisible(false);
+					artGauntletConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
 				}
 			});
 			
-			lance.addActionListener(new ActionListener() {
+			artLance.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					lance.setActionCommand(lanceString);
 					panelCAWeapon.remove(swordArtBox);
 					panelCAWeapon.add(lanceArtBox, gbc);
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
-					noneConfirm.setVisible(false);
-					swordConfirm.setVisible(false);
-					lanceConfirm.setVisible(true);
-					axeConfirm.setVisible(false);
-					bowConfirm.setVisible(false);
-					gauntletConfirm.setVisible(false);
+					artNoneConfirm.setVisible(false);
+					artSwordConfirm.setVisible(false);
+					artLanceConfirm.setVisible(true);
+					artAxeConfirm.setVisible(false);
+					artBowConfirm.setVisible(false);
+					artGauntletConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
 				}
 			});
 			
-			axe.addActionListener(new ActionListener() {
+			artAxe.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					axe.setActionCommand(axeString);
 					panelCAWeapon.remove(swordArtBox);
 					panelCAWeapon.remove(lanceArtBox);
 					panelCAWeapon.add(axeArtBox, gbc);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
-					noneConfirm.setVisible(false);
-					swordConfirm.setVisible(false);
-					lanceConfirm.setVisible(false);
-					axeConfirm.setVisible(true);
-					bowConfirm.setVisible(false);
-					gauntletConfirm.setVisible(false);
+					artNoneConfirm.setVisible(false);
+					artSwordConfirm.setVisible(false);
+					artLanceConfirm.setVisible(false);
+					artAxeConfirm.setVisible(true);
+					artBowConfirm.setVisible(false);
+					artGauntletConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
 				}
 			});
 			
-			bow.addActionListener(new ActionListener() {
+			artBow.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					bow.setActionCommand(bowString);
 					panelCAWeapon.remove(swordArtBox);
 					panelCAWeapon.remove(lanceArtBox);
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.add(bowArtBox, gbc);
 					panelCAWeapon.remove(gauntletArtBox);
-					noneConfirm.setVisible(false);
-					swordConfirm.setVisible(false);
-					lanceConfirm.setVisible(false);
-					axeConfirm.setVisible(false);
-					bowConfirm.setVisible(true);
-					gauntletConfirm.setVisible(false);
+					artNoneConfirm.setVisible(false);
+					artSwordConfirm.setVisible(false);
+					artLanceConfirm.setVisible(false);
+					artAxeConfirm.setVisible(false);
+					artBowConfirm.setVisible(true);
+					artGauntletConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
 				}
 			});
 			
-			gauntlet.addActionListener(new ActionListener() {
+			artGauntlet.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					gauntlet.setActionCommand(gauntletString);
 					panelCAWeapon.remove(swordArtBox);
 					panelCAWeapon.remove(lanceArtBox);
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.add(gauntletArtBox, gbc);
-					noneConfirm.setVisible(false);
-					swordConfirm.setVisible(false);
-					lanceConfirm.setVisible(false);
-					axeConfirm.setVisible(false);
-					bowConfirm.setVisible(false);
-					gauntletConfirm.setVisible(true);
+					artNoneConfirm.setVisible(false);
+					artSwordConfirm.setVisible(false);
+					artLanceConfirm.setVisible(false);
+					artAxeConfirm.setVisible(false);
+					artBowConfirm.setVisible(false);
+					artGauntletConfirm.setVisible(true);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
 				}
 			});
 			
-			noneConfirm.addActionListener(new ActionListener() {
+			artNoneConfirm.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JComboBox<String> competitorOne = new JComboBox<>(unitNameList);
-					JComboBox<String> competitorTwo = new JComboBox<>(unitNameList);
-					int competitorOneIndex = competitorOne.getSelectedIndex();
-					int competitorTwoIndex = competitorTwo.getSelectedIndex();
-					UnitInfo unitOne = unitsFinal[competitorOneIndex];
-					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
-					resultPanel.setText(battle(unitOne, unitTwo));
 					buttonFightCombatArt.setText("CA Selected: None");
 					frameCombatArt.setVisible(false);
 				}
 			});
 			
-			swordConfirm.addActionListener(new ActionListener() {
+			artSwordConfirm.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int artWeaponTypeIndex = swordArtBox.getSelectedIndex();
 					ArtInfo selectedArt = swordArtsFinal[artWeaponTypeIndex];
@@ -451,7 +847,7 @@ public class MainProcessor {
 				}
 			});
 			
-			lanceConfirm.addActionListener(new ActionListener() {
+			artLanceConfirm.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int artWeaponTypeIndex = lanceArtBox.getSelectedIndex();
 					ArtInfo selectedArt = lanceArtsFinal[artWeaponTypeIndex];
@@ -466,7 +862,7 @@ public class MainProcessor {
 				}
 			});
 			
-			axeConfirm.addActionListener(new ActionListener() {
+			artAxeConfirm.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int artWeaponTypeIndex = axeArtBox.getSelectedIndex();
 					ArtInfo selectedArt = axeArtsFinal[artWeaponTypeIndex];
@@ -481,7 +877,7 @@ public class MainProcessor {
 				}
 			});
 			
-			bowConfirm.addActionListener(new ActionListener() {
+			artBowConfirm.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int artWeaponTypeIndex = bowArtBox.getSelectedIndex();
 					ArtInfo selectedArt = bowArtsFinal[artWeaponTypeIndex];
@@ -496,7 +892,7 @@ public class MainProcessor {
 				}
 			});
 			
-			gauntletConfirm.addActionListener(new ActionListener() {
+			artGauntletConfirm.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int artWeaponTypeIndex = gauntletArtBox.getSelectedIndex();
 					ArtInfo selectedArt = gauntletArtsFinal[artWeaponTypeIndex];
@@ -523,28 +919,55 @@ public class MainProcessor {
 			panelBattleSelection.add(competitorTwo);
 			panelBattleSelection.add(buttonFight);
 			panelBattleSelection.add(buttonFightSwap);
+			panelBattleSelection.add(buttonWeaponChange);
 			panelBattleSelection.add(buttonFightCombatArt);
 			
-			panelCAWeapon.add(none, gbc);
-			panelCAWeapon.add(sword, gbc);
-			panelCAWeapon.add(lance, gbc);
-			panelCAWeapon.add(axe, gbc);
-			panelCAWeapon.add(bow, gbc);
-			panelCAWeapon.add(gauntlet, gbc);
+			panelWeaponSelect.add(selectSword);
+			panelWeaponSelect.add(selectLance);
+			panelWeaponSelect.add(selectAxe);
+			panelWeaponSelect.add(selectBow);
+			panelWeaponSelect.add(selectGauntlet);
+			panelWeaponSelect.add(selectFaith);
+			panelWeaponSelect.add(selectReason);
+			
+			panelWeaponConfirm.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			panelWeaponConfirm.add(selectSwordConfirm);
+			selectSwordConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectLanceConfirm);
+			selectLanceConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectAxeConfirm);
+			selectAxeConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectBowConfirm);
+			selectBowConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectGauntletConfirm);
+			selectGauntletConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectFaithConfirm);
+			selectFaithConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectReasonConfirm);
+			selectReasonConfirm.setVisible(false);
+			panelWeaponConfirm.add(selectWeaponCancel);
+			selectWeaponCancel.setVisible(true);
+			
+			panelCAWeapon.add(artNone, gbc);
+			panelCAWeapon.add(artSword, gbc);
+			panelCAWeapon.add(artLance, gbc);
+			panelCAWeapon.add(artAxe, gbc);
+			panelCAWeapon.add(artBow, gbc);
+			panelCAWeapon.add(artGauntlet, gbc);
 			
 			panelArtConfirm.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			panelArtConfirm.add(noneConfirm);
-			noneConfirm.setVisible(false);
-			panelArtConfirm.add(swordConfirm);
-			swordConfirm.setVisible(false);
-			panelArtConfirm.add(lanceConfirm);
-			lanceConfirm.setVisible(false);
-			panelArtConfirm.add(axeConfirm);
-			axeConfirm.setVisible(false);
-			panelArtConfirm.add(bowConfirm);
-			bowConfirm.setVisible(false);
-			panelArtConfirm.add(gauntletConfirm);
-			gauntletConfirm.setVisible(false);
+			panelArtConfirm.add(artNoneConfirm);
+			artNoneConfirm.setVisible(false);
+			panelArtConfirm.add(artSwordConfirm);
+			artSwordConfirm.setVisible(false);
+			panelArtConfirm.add(artLanceConfirm);
+			artLanceConfirm.setVisible(false);
+			panelArtConfirm.add(artAxeConfirm);
+			artAxeConfirm.setVisible(false);
+			panelArtConfirm.add(artBowConfirm);
+			artBowConfirm.setVisible(false);
+			panelArtConfirm.add(artGauntletConfirm);
+			artGauntletConfirm.setVisible(false);
 
 			panelBattleOutput.add(resultPanel);
 			resultPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -566,7 +989,12 @@ public class MainProcessor {
 			frameMain.getContentPane().add(panelBattleOutput, BorderLayout.WEST);
 			frameMain.pack();
 			frameMain.setLocationRelativeTo(null);
-			frameMain.setSize(600, 300);
+			frameMain.setSize(680, 300);
+			
+			frameWeaponSelect.setLocationRelativeTo(null);
+			frameWeaponSelect.add(panelWeaponSelect);
+			frameWeaponSelect.setSize(550,400);
+			frameWeaponSelect.add(panelWeaponConfirm, BorderLayout.SOUTH);
 			
 			frameCombatArt.getContentPane().add(panelCAWeapon, BorderLayout.CENTER);
 			frameCombatArt.setLocationRelativeTo(null);
@@ -619,19 +1047,79 @@ public class MainProcessor {
 		return newArts;
 	}
 	
+	// modifyFile helper method
+    static void modifyFile(String filePath, UnitInfo[] unitArray, int unitInd, int newWepTyp, int newWepID) throws IOException {
+        File fileToBeModified = new File(filePath);
+        String oldContent = "";
+        BufferedReader reader = null;
+        FileWriter writer = null;
+         
+        try {
+            reader = new BufferedReader(new FileReader(fileToBeModified));
+            
+            //Reading all the lines of input text file into oldContent
+             
+            String line = reader.readLine();
+             
+            while (line != null) {
+                oldContent = oldContent + line + System.lineSeparator();
+                 
+                line = reader.readLine();
+            }
+            
+            //Making the newString
+            
+            String oldName = unitArray[unitInd].name;
+            int oldHP = unitArray[unitInd].hp;
+            int oldStr = unitArray[unitInd].str;
+            int oldMag = unitArray[unitInd].mag;
+            int oldDex = unitArray[unitInd].dex;
+            int oldSpd = unitArray[unitInd].spd;
+            int oldLck = unitArray[unitInd].lck;
+            int oldDef = unitArray[unitInd].def;
+            int oldRes = unitArray[unitInd].res;
+            int oldCha = unitArray[unitInd].cha;
+            int oldWeaponType = unitArray[unitInd].wepTypeInd;
+            int oldWeaponID = unitArray[unitInd].wepInd;
+            int newWeaponType = newWepTyp;
+            int newWeaponID = newWepID;
+
+            String oldString = oldName + " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck + " "
+            		+ oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID;
+            String newString = oldName + " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck + " "
+            		+ oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID;
+            
+            String newContent = oldContent.replaceAll(oldString, newString);
+            
+            writer = new FileWriter(fileToBeModified);
+            writer.write(newContent);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                //Closing the resources
+                 
+                reader.close();
+                 
+                writer.close();
+            } 
+            catch (IOException e)  {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+	
 	// Calculating battle info
 	public static String battle(UnitInfo attacker, UnitInfo target) {
-		boolean atkDouble = false;
 		String results;
 		String mtFinal;
 		int critDmg;
 		int dmgFinal;
 		int hitFinal;
 		int critFinal;
-	  
-		if(attacker.atkSpd - target.atkSpd >= 4) {
-			atkDouble = true;
-		}
 		
 		if(attacker.magEqp) {
 			dmgFinal = attacker.magAtk - target.res;
@@ -639,15 +1127,15 @@ public class MainProcessor {
 			dmgFinal = attacker.physAtk - target.def;
 		}
 		
-		hitFinal = attacker.hit - target.genAvo;
-		critFinal = attacker.crit - target.critAvo;
-		critDmg = dmgFinal * 3;
-	  
-		if(atkDouble == true) {
+		if(attacker.atkSpd - target.atkSpd >= 4) {
 			mtFinal = "\nMt: " + dmgFinal + " x2";
 		} else {
 			mtFinal = "\nMt: "+ dmgFinal;
 		}
+		
+		hitFinal = attacker.hit - target.genAvo;
+		critFinal = attacker.crit - target.critAvo;
+		critDmg = dmgFinal * 3;
 		
 		results = attacker.name + " attacks " + target.name + " with " + attacker.wepName + "!"
 				+ mtFinal
@@ -656,7 +1144,7 @@ public class MainProcessor {
 				+ "\nCrit Mt: " + critDmg;
 		
 		return results;
-		}
+	}
 	
 	public static String battle(UnitInfo attacker, UnitInfo target, ArtInfo combatArt) {
 		String results;

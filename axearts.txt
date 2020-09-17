@@ -1,9 +1,0 @@
-Smash		03 20 20 00 false No effect
-HelmSplitter	07 00 05 00 false Mtx3 vs. armor
-MonsterBreaker	09 00 00 00 false Mtx3 vs. monsters
-FocusedStrike	00 30 00 00 false No effect
-WildAbandon	10 -30 30 00 false No effect
-LightningAxe	04 00 00 00 true Mag-based dmg, mt+(res/3)
-Spike		05 15 10 00 false No effect
-DiamondAxe	14 -20 00 00 false No effect
-ArmoredStrike	04 00 00 00 false Mt + (def/3)
