@@ -4,7 +4,7 @@ Alyse 31 12 19 15 13 12 14 14 12 6 4 Macabre Encouragement - Mag/Res +2 for one 
 Annette 29 7 22 10 11 10 8 14 8 6 2 Perseverance - Rally grants ally Str +4.
 Arvyn 31 20 10 11 14 10 13 8 8 0 2 Dauntless - While this unit has 2+ enemies and no allies within 2 spaces, +10 Avo and +3 Mt.
 Ashe 30 15 6 12 12 10 12 9 9 3 2 Lockpick - Can open locks and chests without keys.
-Ashley 29 18 21 15 10 11 13 13 9 6 4 Adapt and Overcome - After taking a physical attack, +2 Def. After a magical attack, +2 Res. Only one active at a time. Lasts one turn.
+Ashley 29 18 21 15 10 11 13 13 9 6 4 Adapt and Overcome - After taking a physical attack, +2 Def. After a magical attack, +2 Res. Lasts one turn.
 Balthus	30 18 7 12 13 11 12 10 11 3 4 King of Grappling - Str/Def +6 when HP ≤ 50%.
 Banquo 29 10 11 9 8 6 11 9 6 0 0 Disillusioned Belief - When HP < 50%, healing restores 3 less HP, but Mt +3.
 Bernadetta 31 15 7 15 13 8 9 5 7 3 2 Persecution Complex - When HP is not full, Mt +5.

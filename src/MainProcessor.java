@@ -11,7 +11,7 @@
  * 
  * @author Errica Cheng (github: lockeanddemosthenes || discord: Locrius 光复香港#9567)
  * @created February 17, 2020
- * @updated February 17, 2020
+ * @updated September 17, 2020
  */
 	
 import java.awt.event.ActionEvent;
@@ -31,21 +31,15 @@ import java.io.BufferedReader;
 
 public class MainProcessor {
 	final static JTextArea resultPanel = new JTextArea();
+	final static JTextArea resultPanelGambit = new JTextArea();
 
 	public static void main(String[] args) throws IOException {
 		int inputCounter = 0;
 		
-//		FileWriter weaponWriter = new FileWriter("weapons.txt");
-//		try {
-//		    weaponWriter.write("Files in Java might be tricky, but it is fun enough!");
-//		    weaponWriter.close();
-//		} catch (IOException e1) {
-//			e1.printStackTrace();
-//		}
-		
 		Scanner weaponInput = new Scanner(new File("weapons.txt"));
 		Scanner unitInput = new Scanner(new File("units.txt"));
 		Scanner artInput = new Scanner(new File("arts.txt"));
+		Scanner gambitInput = new Scanner(new File("gambits.txt"));
 		
 		WeaponInfo[] swords = new WeaponInfo[0];
 		WeaponInfo[] lances = new WeaponInfo[0];
@@ -74,6 +68,9 @@ public class MainProcessor {
 		String[] axeArtNames = new String[0];
 		String[] bowArtNames = new String[0];
 		String[] gauntletArtNames = new String[0];
+		
+		GambitInfo[] gambits = new GambitInfo[0];
+		String[] gambitNames = new String[0];
 		
 		// parse weapon list
 		while (weaponInput.hasNext()) {
@@ -111,7 +108,7 @@ public class MainProcessor {
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				gauntlets = addWeapon(gauntlets, newWeapon);
 				gauntletsNames = addName(gauntletsNames, wepName);
-			} else if (106 <= inputCounter && inputCounter <= 111) {
+			} else if (106 <= inputCounter && inputCounter <= 115) {
 				weaponType = 06;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				faith = addWeapon(faith, newWeapon);
@@ -217,11 +214,11 @@ public class MainProcessor {
 		}
 		unitInput.close();
 		final UnitInfo[] unitsFinal = new UnitInfo[units.length];
-		final String[] unitNameList = new String[unitNames.length];
+		final String[] unitNamesFinal = new String[unitNames.length];
 		
 		for (int i = 0; i < units.length; i++) {
 			unitsFinal[i] = units[i];
-			unitNameList[i] = unitNames[i];
+			unitNamesFinal[i] = unitNames[i];
 		}
 		
 		// parse art list
@@ -290,6 +287,26 @@ public class MainProcessor {
 			gauntletArtsFinal[i] = gauntletArts[i];
 			gauntletArtsNamesFinal[i] = gauntletArtNames[i];
 		}
+		
+		while (gambitInput.hasNext()) {
+			String gambitName = gambitInput.next();
+			boolean gambitMagEqp = gambitInput.nextBoolean();
+			int gambitMt = gambitInput.nextInt();
+			int gambitHit = gambitInput.nextInt();
+			String gambitNote = gambitInput.nextLine();
+			
+			GambitInfo newGambit = new GambitInfo(gambitName, gambitMagEqp, gambitMt, gambitHit, gambitNote);
+			gambits = addGambit(gambits, newGambit);
+			gambitNames = addName(gambitNames, gambitName);
+		}
+		gambitInput.close();
+		final GambitInfo[] gambitsFinal = new GambitInfo[gambits.length];
+		final String[] gambitNamesFinal = new String[gambitNames.length];
+		
+		for (int i = 0; i < gambits.length; i++) {
+			gambitsFinal[i] = gambits[i];
+			gambitNamesFinal[i] = gambitNames[i];
+		}
 
 		/*********************
 		 *     GUI STUFF     *
@@ -305,17 +322,22 @@ public class MainProcessor {
 			JFrame frameMain = new JFrame("BHaE Battle Calculator");
 			JFrame frameCombatArt = new JFrame("Combat Art Selection");
 			JFrame frameWeaponSelect = new JFrame("Weapon Select");
+			JFrame frameGambit = new JFrame("BHaE Gambit Calculator");
 			
 			JPanel panelSelector = new JPanel();
 			JPanel panelBattleSelection = new JPanel();
 			JPanel panelBattleOutput = new JPanel();
+			JPanel panelGambitOutput = new JPanel();
 			JPanel panelWeaponSelect = new JPanel();
 			JPanel panelWeaponConfirm = new JPanel();
 			JPanel panelCAWeapon = new JPanel();
 			JPanel panelArtConfirm = new JPanel();
+			JPanel panelGambitSelection = new JPanel();
 			
-			JComboBox<String> competitorOne = new JComboBox<>(unitNameList);
-			JComboBox<String> competitorTwo = new JComboBox<>(unitNameList);
+			JComboBox<String> competitorOne = new JComboBox<>(unitNamesFinal);
+			JComboBox<String> competitorTwo = new JComboBox<>(unitNamesFinal);
+			JComboBox<String> competitorOneGambit = new JComboBox<>(unitNamesFinal);
+			JComboBox<String> competitorTwoGambit = new JComboBox<>(unitNamesFinal);
 			
 			JComboBox<String> swordsBox = new JComboBox<>(swordsNamesFinal);
 			JComboBox<String> lancesBox = new JComboBox<>(lancesNamesFinal);
@@ -331,8 +353,10 @@ public class MainProcessor {
 			JComboBox<String> bowArtBox = new JComboBox<>(bowArtsNamesFinal);
 			JComboBox<String> gauntletArtBox = new JComboBox<>(gauntletArtsNamesFinal);
 			
+			JComboBox<String> gambitBox = new JComboBox<>(gambitNamesFinal);
+			
 			JButton buttonNormalFight = new JButton("Normal Fight");
-			JButton buttonGambitCalc = new JButton("Gambit");
+			JButton buttonGambitSwitch = new JButton("Gambit");
 			JButton buttonFight = new JButton("Fight!");
 			JButton buttonFightSwap = new JButton("Swap");
 			JButton buttonWeaponChange = new JButton("Change Weapon");
@@ -369,9 +393,18 @@ public class MainProcessor {
 			JButton artBowConfirm = new JButton("Confirm");
 			JButton artGauntletConfirm = new JButton("Confirm");
 			
+			JButton buttonGambitFight = new JButton("Fight!");
+			
 			/**
 			 * COMPONENTS
 			 */
+			
+			buttonGambitSwitch.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					frameGambit.setVisible(true);
+					frameSelector.setVisible(false);
+				}
+			});
 			
 			buttonNormalFight.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -379,6 +412,7 @@ public class MainProcessor {
 					frameSelector.setVisible(false);
 				}
 			});
+			
 
 			buttonFight.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -906,13 +940,25 @@ public class MainProcessor {
 				}
 			});
 			
+			buttonGambitFight.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int competitorOneIndex = competitorOneGambit.getSelectedIndex();
+					int competitorTwoIndex = competitorTwoGambit.getSelectedIndex();
+					int gambitIndex = gambitBox.getSelectedIndex();
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+					GambitInfo gambit = gambitsFinal[gambitIndex];
+					resultPanelGambit.setText(gambit(unitOne, unitTwo, gambit));
+				}
+			});
+			
 			/**
 			 * PANELS
 			 */
 			
 			panelSelector.setLayout(new GridBagLayout());
 			panelSelector.add(buttonNormalFight, gbc);
-			panelSelector.add(buttonGambitCalc, gbc);
+			panelSelector.add(buttonGambitSwitch, gbc);
 
 			panelBattleSelection.add(competitorOne);
 			panelBattleSelection.add(competitorTwo);
@@ -967,9 +1013,17 @@ public class MainProcessor {
 			artBowConfirm.setVisible(false);
 			panelArtConfirm.add(artGauntletConfirm);
 			artGauntletConfirm.setVisible(false);
+			
+			panelGambitSelection.add(competitorOneGambit);
+			panelGambitSelection.add(competitorTwoGambit);
+			panelGambitSelection.add(gambitBox);
+			panelGambitSelection.add(buttonGambitFight);
 
 			panelBattleOutput.add(resultPanel);
 			resultPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+			
+			panelGambitOutput.add(resultPanelGambit);
+			resultPanelGambit.setAlignmentX(Component.LEFT_ALIGNMENT);
 			
 			/**
 			 * FRAMES
@@ -999,6 +1053,11 @@ public class MainProcessor {
 			frameCombatArt.setLocationRelativeTo(null);
 			frameCombatArt.setSize(450,400);
 			frameCombatArt.add(panelArtConfirm, BorderLayout.SOUTH);
+			
+			frameGambit.getContentPane().add(panelGambitOutput);
+			frameGambit.getContentPane().add(panelGambitSelection, BorderLayout.SOUTH);
+			frameGambit.setSize(750,300);
+			frameGambit.setLocationRelativeTo(null);
 		});
 	}
 	
@@ -1044,6 +1103,14 @@ public class MainProcessor {
 		newArts[newArts.length - 1] = artToAdd;
 
 		return newArts;
+	}
+	
+	private static GambitInfo[] addGambit(GambitInfo[] gambits, GambitInfo gambitToAdd) {
+		GambitInfo[] newGambits = new GambitInfo[gambits.length + 1];
+		System.arraycopy(gambits, 0, newGambits, 0, gambits.length);
+		newGambits[newGambits.length - 1] = gambitToAdd;
+
+		return newGambits;
 	}
 	
 	// modifyFile helper method
@@ -1111,31 +1178,35 @@ public class MainProcessor {
         }
     }
     
-	
 	// Calculating battle info
 	public static String battle(UnitInfo attacker, UnitInfo target) {
 		String results;
 		String mtFinal;
 		int critDmg;
-		int dmgFinal;
+		int dmgFinal = 0;
 		int hitFinal;
 		int critFinal;
 		
-		if(attacker.magEqp) {
+		hitFinal = attacker.hit - target.genAvo;
+		critFinal = attacker.crit - target.critAvo;
+		critDmg = dmgFinal * 3;
+		
+		if((attacker.wep.wepName.compareTo("Heal") == 0) || (attacker.wep.wepName.compareTo("Physic") == 0) || (attacker.wep.wepName.compareTo("Recover") == 0) || (attacker.wep.wepName.compareTo("Fortify") == 0)) {
+			dmgFinal = attacker.magAtk;
+			hitFinal = 0;
+			critFinal = 0;
+		} else if(attacker.magEqp) {
 			dmgFinal = attacker.magAtk - target.res;
 		} else {
 			dmgFinal = attacker.physAtk - target.def;
 		}
+		
 		
 		if(attacker.atkSpd - target.atkSpd >= 4) {
 			mtFinal = "\nMt: " + dmgFinal + " x2";
 		} else {
 			mtFinal = "\nMt: "+ dmgFinal;
 		}
-		
-		hitFinal = attacker.hit - target.genAvo;
-		critFinal = attacker.crit - target.critAvo;
-		critDmg = dmgFinal * 3;
 		
 		results = attacker.name + " attacks " + target.name + " with " + attacker.wepName + "!"
 				+ mtFinal
@@ -1171,8 +1242,37 @@ public class MainProcessor {
 				+ "\nCrit: " + critFinal
 				+ "\nCrit Mt: " + critDmg
 				+ "\nEffect: " + combatArt.note
-				+ "\nAttacker Personal:" + attacker.personal
+				+ "\n\nAttacker Personal:" + attacker.personal
 				+ "\nTarget Personal:" + target.personal;
+		
+		return results;
+	}
+	
+	public static String gambit(UnitInfo attacker, UnitInfo target, GambitInfo gambit) {
+		String results = null;
+		int gambitDmg;
+		int gambitHit;
+		int attackerCha5 = attacker.cha / 5;
+		int attackerMag3 = attacker.mag / 3;
+		
+		if(gambit.name.compareTo("ResonantWhiteMagic") == 0) {
+			gambitDmg = gambit.mt + attackerMag3;
+		}
+		else if(gambit.magEqp) {
+			gambitDmg = gambit.mt + attackerCha5 + attacker.magAtk - target.res;
+		} else {
+			gambitDmg = gambit.mt + attackerCha5 + attacker.physAtk - target.def;
+		}
+		
+		gambitHit = gambit.hit + (attacker.cha - target.cha) * 5;
+		
+		results = attacker.name + " orders " + gambit.name + " on " + target.name + "!"
+				+ "\nMt: " + gambitDmg
+				+ "\nHit: " + gambitHit
+				+ "\nEffect: " + gambit.note
+				+ "\n\nAttacker Personal: " + attacker.personal
+				+ "\nTarget Personal: " + target.personal
+				+ "\n\n(unit authority proficiency modifier not added to Mt)";
 		
 		return results;
 	}

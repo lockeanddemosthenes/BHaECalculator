@@ -103,10 +103,14 @@ SilverGauntlets			false 4 85 5 7
 SilverGauntlets+		false 4 90 5 7
 AuraKnuckles			true 2 70 0 4
 AuraKnuckles+			true 2 70 5 3
+Heal				true 8 100 0 0
+Physic				true 8 100 0 0
+Recover				true 30 100 0 0
 Nosferatu			true 1 80 0 8
 Seraphim			true 8 75 5 10
 Shine				true 6 90 10 12
 Purge				true 10 75 0 15
+Fortify				true 15 100 0 0
 Abraxas				true 14 80 5 13
 Aura				true 12 70 20 12
 Fire				true 3 90 0 3

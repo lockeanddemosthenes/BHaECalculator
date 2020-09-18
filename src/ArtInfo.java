@@ -5,7 +5,7 @@
  * 
  * @author Errica Cheng (github: lockeanddemosthenes || discord: Locrius 光复香港#9567)
  * @created February 17, 2020
- * @updated February 17, 2020
+ * @updated September 17, 2020
  */
 
 public class ArtInfo {

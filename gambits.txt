@@ -1,0 +1,31 @@
+Disturbance				false 4 60 No effect
+ResonantWhiteMagic		true 8 100 Heals all allies in range.
+Lure					false 4 50 Pulls adjacent foe to unit's opposite side.
+Assembly				false 4 50 User moves one space backward, while primary target moves into user's previous space.
+GroupFlames				true 2 60 Converts grass, forest, thicket, wasteland, and house terrain into flames terrain for one turn.
+GroupIce				true 3 50 No effect
+GroupLanceAttack		false 6 50 Attacks all foes in area.
+GroupLightning			true 4 40 Noe effect
+MadMelee				false 4 60 Attacks all foes in area.
+PoisonedArrows			false 4 60 Mt x3 vs. flying. Inflicts poison on all targets.
+RandomShot				false 8 40 Attacks all foes in area.
+RecoveryRoar			true 0 100 Removes status conditions from all allies in area.
+AssaultTroop			false 10 50 Attacks all foes in area.
+FlashFireArrows			false 7 50 Mt x3 vs. flying. Converts grass, forest, thicket, wasteland, and house terrain into flames terrain for one turn.
+Fusillade				false 5 50 Mt x3 vs. flying.
+ImpregnableWall			false 0 100 Reduces all damage taken and dealt by allies in area to 1 for one turn.
+Onslaught				false 8 50 Pushes adjacent foe back one tile if it is open.
+ResonantFlames			true 6 60 Converts grass, forest, thicket, wasteland, and house terrain into flames terrain for one turn.
+ResonantIce				true 7 50 No effect
+ResonantLightning		true 8 40 No effect
+Reversal				false 8 50 User switches places with primary target.
+Stride					false 0 100 Allies in range get Mvt +5 until end of turn.
+Blaze					true 10 50 Converts grass, forest, thicket, wasteland, and house terrain into flames terrain for one turn.
+Blessing				true 0 100 Grants Blessing to all allies in area.
+LineOfLances			false 5 50 Mt x3 to cavalry.
+PoisonTactic			false 5 60 Inflicts poison on all foes in area.
+SacredShield			true 0 100 Negates all ranged damage to allies in area for one turn.
+Absorption				false 4 30 Restores (damage dealt / 2) HP to user from each target in the area.
+DanceOfTheGoddess		true 0 100 Allows all allies in area to move again.
+LinkedHorses			false 12 50 No effect
+Retribution				true 0 100 Allows allies in area to counterattack regardless of enemy range for five turns.

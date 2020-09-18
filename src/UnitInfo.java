@@ -5,7 +5,7 @@
  * 
  * @author Errica Cheng (github: lockeanddemosthenes || discord: Locrius 光复香港#9567)
  * @created February 17, 2020
- * @updated February 17, 2020
+ * @updated September 17, 2020
  */
 
 public class UnitInfo {
@@ -63,7 +63,7 @@ public class UnitInfo {
 		int wepAdjWt = wepWt - (int)(str/5);
 		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
 		
-		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0)) {
+		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0) || wep.wepName.compareTo("Fortify") == 0) {
 			magAtk = wepMt + mag/3;
 		} else {
 			magAtk = wepMt + mag;
