@@ -23,6 +23,7 @@ public class UnitInfo {
 	int wepInd;
 	int wepTypeInd;
 	WeaponInfo wep;
+	String crest;
 	String personal;
 	
 	String wepName;
@@ -35,7 +36,7 @@ public class UnitInfo {
 	int atkSpd;
 	int genAvo;
 	
-	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int c, int wTypInd, int wInd, WeaponInfo w, String p) {
+	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int ch, int wTypInd, int wInd, WeaponInfo w, String cre, String p) {
 
 		//The variables that get put in when creating a unit
 		name = n;
@@ -47,8 +48,9 @@ public class UnitInfo {
 		lck = l;
 		def = defense;
 		res = r;
-		cha = c;
+		cha = ch;
 		wep = w;
+		crest = cre;
 		personal = p;
 		wepTypeInd = wTypInd;
 		wepInd = wInd;

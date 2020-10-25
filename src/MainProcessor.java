@@ -48,6 +48,7 @@ public class MainProcessor {
 		WeaponInfo[] gauntlets = new WeaponInfo[0];
 		WeaponInfo[] faith = new WeaponInfo[0];
 		WeaponInfo[] reason = new WeaponInfo[0];
+		WeaponInfo[] relics = new WeaponInfo[0];
 		String[] swordsNames = new String[0];
 		String[] lancesNames = new String[0];
 		String[] axesNames = new String[0];
@@ -55,6 +56,7 @@ public class MainProcessor {
 		String[] gauntletsNames = new String[0];
 		String[] faithNames = new String[0];
 		String[] reasonNames = new String[0];
+		String[] relicsNames = new String[0];
 		
 		UnitInfo[] units = new UnitInfo[0];
 		ArtInfo[] swordArts = new ArtInfo[0];
@@ -62,12 +64,14 @@ public class MainProcessor {
 		ArtInfo[] axeArts = new ArtInfo[0];
 		ArtInfo[] bowArts = new ArtInfo[0];
 		ArtInfo[] gauntletArts = new ArtInfo[0];
+		ArtInfo[] relicArts = new ArtInfo[0];
 		String[] unitNames = new String[0];
 		String[] swordArtNames = new String[0];
 		String[] lanceArtNames = new String[0];
 		String[] axeArtNames = new String[0];
 		String[] bowArtNames = new String[0];
 		String[] gauntletArtNames = new String[0];
+		String[] relicArtNames = new String[0];
 		
 		GambitInfo[] gambits = new GambitInfo[0];
 		String[] gambitNames = new String[0];
@@ -83,41 +87,46 @@ public class MainProcessor {
 			int weaponType = 0;
 			inputCounter++;
 			
-			if ((1 <= inputCounter && inputCounter <= 22) || inputCounter == 134) {
-				weaponType = 01;
+			if ((1 <= inputCounter && inputCounter <= 22)) {
+				weaponType = 1;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				swords = addWeapon(swords, newWeapon);
 				swordsNames = addName(swordsNames, wepName);
-			} else if ((23 <= inputCounter && inputCounter <= 46) || inputCounter == 135) {
-				weaponType = 02;
+			} else if ((23 <= inputCounter && inputCounter <= 46)) {
+				weaponType = 2;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				lances = addWeapon(lances, newWeapon);
 				lancesNames = addName(lancesNames, wepName);
 			} else if (47 <= inputCounter && inputCounter <= 72) {
-				weaponType = 03;
+				weaponType = 3;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				axes = addWeapon(axes, newWeapon);
 				axesNames = addName(axesNames, wepName);
 			} else if (73 <= inputCounter && inputCounter <= 92) {
-				weaponType = 04;
+				weaponType = 4;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				bows = addWeapon(bows, newWeapon);
 				bowsNames = addName(bowsNames, wepName);
-			} else if (93 <= inputCounter && inputCounter <= 105 || inputCounter == 136) {
-				weaponType = 05;
+			} else if (93 <= inputCounter && inputCounter <= 105) {
+				weaponType = 5;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				gauntlets = addWeapon(gauntlets, newWeapon);
 				gauntletsNames = addName(gauntletsNames, wepName);
 			} else if (106 <= inputCounter && inputCounter <= 115) {
-				weaponType = 06;
+				weaponType = 6;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				faith = addWeapon(faith, newWeapon);
 				faithNames = addName(faithNames, wepName);
-			} else {
-				weaponType = 07;
+			} else if (116 <= inputCounter && inputCounter <= 137) {
+				weaponType = 7;
 				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
 				reason = addWeapon(reason, newWeapon);
 				reasonNames = addName(reasonNames, wepName);
+			} else {
+				weaponType = 8;
+				WeaponInfo newWeapon = new WeaponInfo(wepName, magEqp, mtBase, hitBase, critBase, wt, weaponType);
+				relics = addWeapon(relics, newWeapon);
+				relicsNames = addName(relicsNames, wepName);
 			}
 		}
 		weaponInput.close();
@@ -128,6 +137,7 @@ public class MainProcessor {
 		final WeaponInfo[] gauntletsFinal = new WeaponInfo[gauntlets.length];
 		final WeaponInfo[] faithFinal = new WeaponInfo[faith.length];
 		final WeaponInfo[] reasonFinal = new WeaponInfo[reason.length];
+		final WeaponInfo[] relicsFinal = new WeaponInfo[relics.length];
 		final String[] swordsNamesFinal = new String[swordsNames.length];
 		final String[] lancesNamesFinal = new String[lancesNames.length];
 		final String[] axesNamesFinal = new String[axesNames.length];
@@ -135,6 +145,7 @@ public class MainProcessor {
 		final String[] gauntletsNamesFinal = new String[gauntletsNames.length];
 		final String[] faithNamesFinal = new String[faithNames.length];
 		final String[] reasonNamesFinal = new String[reasonNames.length];
+		final String[] relicsNamesFinal = new String[relicsNames.length];
 		
 		for (int i = 0; i < swordsNames.length; i++) {
 			swordsFinal[i] = swords[i];
@@ -164,6 +175,10 @@ public class MainProcessor {
 			reasonFinal[i] = reason[i];
 			reasonNamesFinal[i] = reasonNames[i];
 		}
+		for (int i = 0; i < relicsNames.length; i++) {
+			relicsFinal[i] = relics[i];
+			relicsNamesFinal[i] = relicsNames[i];
+		}
 		
 		inputCounter = 0;
 		
@@ -181,6 +196,8 @@ public class MainProcessor {
 			int cha = unitInput.nextInt();
 			int wepTyp = unitInput.nextInt();
 			int wepInd = unitInput.nextInt();
+			String crestStart = unitInput.next();
+			String crest = crestStart + unitInput.nextLine();
 			String personal = unitInput.nextLine();
 			WeaponInfo wepID = null;
 			
@@ -206,9 +223,11 @@ public class MainProcessor {
 				case 6:
 					wepID = reason[wepInd];
 					break;
+				case 7:
+					wepID = relics[wepInd];
 			}
 
-			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID, personal);
+			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID, crest, personal);
 			units = addUnit(units, newUnit);
 			unitNames = addName(unitNames, name);
 		}
@@ -245,9 +264,12 @@ public class MainProcessor {
 			} else if (29 <= inputCounter && inputCounter <= 38) {
 				bowArts = addArt(bowArts, newArt);
 				bowArtNames = addName(bowArtNames, artName);
-			} else {
+			} else if (39 <= inputCounter && inputCounter <= 47){
 				gauntletArts = addArt(gauntletArts, newArt);
 				gauntletArtNames = addName(gauntletArtNames, artName);
+			} else {
+				relicArts = addArt(relicArts, newArt);
+				relicArtNames = addName(relicArtNames, artName);
 			}
 		}
 		artInput.close();
@@ -262,6 +284,8 @@ public class MainProcessor {
 		final String[] bowArtsNamesFinal = new String[bowArtNames.length];
 		final ArtInfo[] gauntletArtsFinal = new ArtInfo[gauntletArts.length];
 		final String[] gauntletArtsNamesFinal = new String[gauntletArtNames.length];
+		final ArtInfo[] relicArtsFinal = new ArtInfo[relicArts.length];
+		final String[] relicArtsNamesFinal = new String[relicArtNames.length];
 		
 		for (int i = 0; i < swordArtsFinal.length; i++) {
 			swordArtsFinal[i] = swordArts[i];
@@ -286,6 +310,11 @@ public class MainProcessor {
 		for (int i = 0; i < gauntletArtsFinal.length; i++) {
 			gauntletArtsFinal[i] = gauntletArts[i];
 			gauntletArtsNamesFinal[i] = gauntletArtNames[i];
+		}
+		
+		for (int i = 0; i < relicArtsFinal.length; i++) {
+			relicArtsFinal[i] = relicArts[i];
+			relicArtsNamesFinal[i] = relicArtNames[i];
 		}
 		
 		while (gambitInput.hasNext()) {
@@ -346,12 +375,14 @@ public class MainProcessor {
 			JComboBox<String> gauntletsBox = new JComboBox<>(gauntletsNamesFinal);
 			JComboBox<String> faithBox = new JComboBox<>(faithNamesFinal);
 			JComboBox<String> reasonBox = new JComboBox<>(reasonNamesFinal);
+			JComboBox<String> relicsBox = new JComboBox<>(relicsNamesFinal);
 			
 			JComboBox<String> swordArtBox = new JComboBox<>(swordArtsNamesFinal);
 			JComboBox<String> lanceArtBox = new JComboBox<>(lanceArtsNamesFinal);
 			JComboBox<String> axeArtBox = new JComboBox<>(axeArtsNamesFinal);
 			JComboBox<String> bowArtBox = new JComboBox<>(bowArtsNamesFinal);
 			JComboBox<String> gauntletArtBox = new JComboBox<>(gauntletArtsNamesFinal);
+			JComboBox<String> relicsArtBox = new JComboBox<>(relicArtsNamesFinal);
 			
 			JComboBox<String> gambitBox = new JComboBox<>(gambitNamesFinal);
 			
@@ -369,6 +400,7 @@ public class MainProcessor {
 			JButton selectGauntlet = new JButton("Gauntlets");
 			JButton selectFaith = new JButton("Faith");
 			JButton selectReason = new JButton("Reason");
+			JButton selectRelic = new JButton("Relic");
 			
 			JButton selectSwordConfirm = new JButton("Confirm");
 			JButton selectLanceConfirm = new JButton("Confirm");
@@ -377,6 +409,7 @@ public class MainProcessor {
 			JButton selectGauntletConfirm = new JButton("Confirm");
 			JButton selectFaithConfirm = new JButton("Confirm");
 			JButton selectReasonConfirm = new JButton("Confirm");
+			JButton selectRelicConfirm = new JButton("Confirm");
 			JButton selectWeaponCancel = new JButton("Cancel");
 			
 			JButton artNone = new JButton("None");
@@ -385,6 +418,7 @@ public class MainProcessor {
 			JButton artAxe = new JButton("Axe");
 			JButton artBow = new JButton("Bow");
 			JButton artGauntlet = new JButton("Gauntlet");
+			JButton artRelic = new JButton("Relic");
 			
 			JButton artNoneConfirm = new JButton("Confirm");
 			JButton artSwordConfirm = new JButton("Confirm");
@@ -392,6 +426,7 @@ public class MainProcessor {
 			JButton artAxeConfirm = new JButton("Confirm");
 			JButton artBowConfirm = new JButton("Confirm");
 			JButton artGauntletConfirm = new JButton("Confirm");
+			JButton artRelicConfirm = new JButton("Confirm");
 			
 			JButton buttonGambitFight = new JButton("Fight!");
 			
@@ -462,6 +497,7 @@ public class MainProcessor {
 					panelWeaponSelect.remove(gauntletsBox);
 					panelWeaponSelect.remove(faithBox);
 					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(true);
 					selectLanceConfirm.setVisible(false);
 					selectAxeConfirm.setVisible(false);
@@ -469,6 +505,7 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(false);
 					selectFaithConfirm.setVisible(false);
 					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(false);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -484,6 +521,7 @@ public class MainProcessor {
 					panelWeaponSelect.remove(gauntletsBox);
 					panelWeaponSelect.remove(faithBox);
 					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(false);
 					selectLanceConfirm.setVisible(true);
 					selectAxeConfirm.setVisible(false);
@@ -491,6 +529,7 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(false);
 					selectFaithConfirm.setVisible(false);
 					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(false);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -506,6 +545,7 @@ public class MainProcessor {
 					panelWeaponSelect.remove(gauntletsBox);
 					panelWeaponSelect.remove(faithBox);
 					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(false);
 					selectLanceConfirm.setVisible(false);
 					selectAxeConfirm.setVisible(true);
@@ -513,6 +553,7 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(false);
 					selectFaithConfirm.setVisible(false);
 					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(false);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -528,6 +569,7 @@ public class MainProcessor {
 					panelWeaponSelect.remove(gauntletsBox);
 					panelWeaponSelect.remove(faithBox);
 					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(false);
 					selectLanceConfirm.setVisible(false);
 					selectAxeConfirm.setVisible(false);
@@ -535,6 +577,7 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(false);
 					selectFaithConfirm.setVisible(false);
 					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(false);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -550,6 +593,7 @@ public class MainProcessor {
 					panelWeaponSelect.add(gauntletsBox, gbc);
 					panelWeaponSelect.remove(faithBox);
 					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(false);
 					selectLanceConfirm.setVisible(false);
 					selectAxeConfirm.setVisible(false);
@@ -557,6 +601,7 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(true);
 					selectFaithConfirm.setVisible(false);
 					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(false);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -572,6 +617,7 @@ public class MainProcessor {
 					panelWeaponSelect.remove(gauntletsBox);
 					panelWeaponSelect.add(faithBox, gbc);
 					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(false);
 					selectLanceConfirm.setVisible(false);
 					selectAxeConfirm.setVisible(false);
@@ -579,6 +625,7 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(false);
 					selectFaithConfirm.setVisible(true);
 					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(false);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -594,6 +641,7 @@ public class MainProcessor {
 					panelWeaponSelect.remove(gauntletsBox);
 					panelWeaponSelect.remove(faithBox);
 					panelWeaponSelect.add(reasonBox, gbc);
+					panelWeaponSelect.remove(relicsBox);
 					selectSwordConfirm.setVisible(false);
 					selectLanceConfirm.setVisible(false);
 					selectAxeConfirm.setVisible(false);
@@ -601,6 +649,31 @@ public class MainProcessor {
 					selectGauntletConfirm.setVisible(false);
 					selectFaithConfirm.setVisible(false);
 					selectReasonConfirm.setVisible(true);
+					selectRelicConfirm.setVisible(false);
+					frameWeaponSelect.invalidate();
+					frameWeaponSelect.validate();
+					frameWeaponSelect.repaint();
+				}
+			});
+			
+			selectRelic.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelWeaponSelect.remove(swordsBox);
+					panelWeaponSelect.remove(lancesBox);
+					panelWeaponSelect.remove(axesBox);
+					panelWeaponSelect.remove(bowsBox);
+					panelWeaponSelect.remove(gauntletsBox);
+					panelWeaponSelect.remove(faithBox);
+					panelWeaponSelect.remove(reasonBox);
+					panelWeaponSelect.add(relicsBox, gbc);
+					selectSwordConfirm.setVisible(false);
+					selectLanceConfirm.setVisible(false);
+					selectAxeConfirm.setVisible(false);
+					selectBowConfirm.setVisible(false);
+					selectGauntletConfirm.setVisible(false);
+					selectFaithConfirm.setVisible(false);
+					selectReasonConfirm.setVisible(false);
+					selectRelicConfirm.setVisible(true);
 					frameWeaponSelect.invalidate();
 					frameWeaponSelect.validate();
 					frameWeaponSelect.repaint();
@@ -740,6 +813,25 @@ public class MainProcessor {
 				}
 			});
 			
+			selectRelicConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int weaponTypeIndex = 7;
+					int weaponIndex = relicsBox.getSelectedIndex();
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					try {
+						modifyFile("units.txt", unitsFinal, competitorOneIndex, weaponTypeIndex, weaponIndex);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+				    unitOne.changeUnitWep(relicsFinal, weaponIndex);
+					resultPanel.setText(battle(unitOne, unitTwo));
+					frameWeaponSelect.setVisible(false);
+				}
+			});
+			
 			buttonFightCombatArt.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					frameCombatArt.setVisible(true);
@@ -754,12 +846,14 @@ public class MainProcessor {
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
+					panelCAWeapon.remove(relicsArtBox);
 					artNoneConfirm.setVisible(true);
 					artSwordConfirm.setVisible(false);
 					artLanceConfirm.setVisible(false);
 					artAxeConfirm.setVisible(false);
 					artBowConfirm.setVisible(false);
 					artGauntletConfirm.setVisible(false);
+					artRelicConfirm.setVisible(false);
 				}
 			});
 			
@@ -770,12 +864,14 @@ public class MainProcessor {
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
+					panelCAWeapon.remove(relicsArtBox);
 					artNoneConfirm.setVisible(false);
 					artSwordConfirm.setVisible(true);
 					artLanceConfirm.setVisible(false);
 					artAxeConfirm.setVisible(false);
 					artBowConfirm.setVisible(false);
 					artGauntletConfirm.setVisible(false);
+					artRelicConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
@@ -789,12 +885,14 @@ public class MainProcessor {
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
+					panelCAWeapon.remove(relicsArtBox);
 					artNoneConfirm.setVisible(false);
 					artSwordConfirm.setVisible(false);
 					artLanceConfirm.setVisible(true);
 					artAxeConfirm.setVisible(false);
 					artBowConfirm.setVisible(false);
 					artGauntletConfirm.setVisible(false);
+					artRelicConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
@@ -808,12 +906,14 @@ public class MainProcessor {
 					panelCAWeapon.add(axeArtBox, gbc);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.remove(gauntletArtBox);
+					panelCAWeapon.remove(relicsArtBox);
 					artNoneConfirm.setVisible(false);
 					artSwordConfirm.setVisible(false);
 					artLanceConfirm.setVisible(false);
 					artAxeConfirm.setVisible(true);
 					artBowConfirm.setVisible(false);
 					artGauntletConfirm.setVisible(false);
+					artRelicConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
@@ -827,12 +927,14 @@ public class MainProcessor {
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.add(bowArtBox, gbc);
 					panelCAWeapon.remove(gauntletArtBox);
+					panelCAWeapon.remove(relicsArtBox);
 					artNoneConfirm.setVisible(false);
 					artSwordConfirm.setVisible(false);
 					artLanceConfirm.setVisible(false);
 					artAxeConfirm.setVisible(false);
 					artBowConfirm.setVisible(true);
 					artGauntletConfirm.setVisible(false);
+					artRelicConfirm.setVisible(false);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
@@ -846,12 +948,35 @@ public class MainProcessor {
 					panelCAWeapon.remove(axeArtBox);
 					panelCAWeapon.remove(bowArtBox);
 					panelCAWeapon.add(gauntletArtBox, gbc);
+					panelCAWeapon.remove(relicsArtBox);
 					artNoneConfirm.setVisible(false);
 					artSwordConfirm.setVisible(false);
 					artLanceConfirm.setVisible(false);
 					artAxeConfirm.setVisible(false);
 					artBowConfirm.setVisible(false);
 					artGauntletConfirm.setVisible(true);
+					artRelicConfirm.setVisible(false);
+					frameCombatArt.invalidate();
+					frameCombatArt.validate();
+					frameCombatArt.repaint();
+				}
+			});
+			
+			artRelic.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelCAWeapon.remove(swordArtBox);
+					panelCAWeapon.remove(lanceArtBox);
+					panelCAWeapon.remove(axeArtBox);
+					panelCAWeapon.remove(bowArtBox);
+					panelCAWeapon.remove(gauntletArtBox);
+					panelCAWeapon.add(relicsArtBox, gbc);
+					artNoneConfirm.setVisible(false);
+					artSwordConfirm.setVisible(false);
+					artLanceConfirm.setVisible(false);
+					artAxeConfirm.setVisible(false);
+					artBowConfirm.setVisible(false);
+					artGauntletConfirm.setVisible(false);
+					artRelicConfirm.setVisible(true);
 					frameCombatArt.invalidate();
 					frameCombatArt.validate();
 					frameCombatArt.repaint();
@@ -940,6 +1065,21 @@ public class MainProcessor {
 				}
 			});
 			
+			artRelicConfirm.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					int artWeaponTypeIndex = relicsArtBox.getSelectedIndex();
+					ArtInfo selectedArt = relicArtsFinal[artWeaponTypeIndex];
+					String combatArtNameSelected = gauntletArtsNamesFinal[artWeaponTypeIndex];
+					buttonFightCombatArt.setText("CA Selected: " + combatArtNameSelected);
+					int competitorOneIndex = competitorOne.getSelectedIndex();
+					int competitorTwoIndex = competitorTwo.getSelectedIndex();
+					UnitInfo unitOne = unitsFinal[competitorOneIndex];
+					UnitInfo unitTwo = unitsFinal[competitorTwoIndex];
+					resultPanel.setText(battle(unitOne, unitTwo, selectedArt));
+					frameCombatArt.setVisible(false);
+				}
+			});
+			
 			buttonGambitFight.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int competitorOneIndex = competitorOneGambit.getSelectedIndex();
@@ -974,6 +1114,7 @@ public class MainProcessor {
 			panelWeaponSelect.add(selectGauntlet);
 			panelWeaponSelect.add(selectFaith);
 			panelWeaponSelect.add(selectReason);
+			panelWeaponSelect.add(selectRelic);
 			
 			panelWeaponConfirm.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			panelWeaponConfirm.add(selectSwordConfirm);
@@ -992,6 +1133,8 @@ public class MainProcessor {
 			selectReasonConfirm.setVisible(false);
 			panelWeaponConfirm.add(selectWeaponCancel);
 			selectWeaponCancel.setVisible(true);
+			panelWeaponConfirm.add(selectRelicConfirm);
+			selectRelicConfirm.setVisible(false);
 			
 			panelCAWeapon.add(artNone, gbc);
 			panelCAWeapon.add(artSword, gbc);
@@ -999,6 +1142,7 @@ public class MainProcessor {
 			panelCAWeapon.add(artAxe, gbc);
 			panelCAWeapon.add(artBow, gbc);
 			panelCAWeapon.add(artGauntlet, gbc);
+			panelCAWeapon.add(artRelic, gbc);
 			
 			panelArtConfirm.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			panelArtConfirm.add(artNoneConfirm);
@@ -1013,6 +1157,8 @@ public class MainProcessor {
 			artBowConfirm.setVisible(false);
 			panelArtConfirm.add(artGauntletConfirm);
 			artGauntletConfirm.setVisible(false);
+			panelArtConfirm.add(artRelicConfirm);
+			artRelicConfirm.setVisible(false);
 			
 			panelGambitSelection.add(competitorOneGambit);
 			panelGambitSelection.add(competitorTwoGambit);
@@ -1042,21 +1188,21 @@ public class MainProcessor {
 			frameMain.getContentPane().add(panelBattleOutput, BorderLayout.WEST);
 			frameMain.pack();
 			frameMain.setLocationRelativeTo(null);
-			frameMain.setSize(750, 300);
+			frameMain.setSize(800, 375);
 			
 			frameWeaponSelect.setLocationRelativeTo(null);
 			frameWeaponSelect.add(panelWeaponSelect);
-			frameWeaponSelect.setSize(550,400);
+			frameWeaponSelect.setSize(650,400);
 			frameWeaponSelect.add(panelWeaponConfirm, BorderLayout.SOUTH);
 			
 			frameCombatArt.getContentPane().add(panelCAWeapon, BorderLayout.CENTER);
 			frameCombatArt.setLocationRelativeTo(null);
-			frameCombatArt.setSize(450,400);
+			frameCombatArt.setSize(550,400);
 			frameCombatArt.add(panelArtConfirm, BorderLayout.SOUTH);
 			
 			frameGambit.getContentPane().add(panelGambitOutput);
 			frameGambit.getContentPane().add(panelGambitSelection, BorderLayout.SOUTH);
-			frameGambit.setSize(750,300);
+			frameGambit.setSize(800,300);
 			frameGambit.setLocationRelativeTo(null);
 		});
 	}
@@ -1105,6 +1251,7 @@ public class MainProcessor {
 		return newArts;
 	}
 	
+	// addGambit helper method
 	private static GambitInfo[] addGambit(GambitInfo[] gambits, GambitInfo gambitToAdd) {
 		GambitInfo[] newGambits = new GambitInfo[gambits.length + 1];
 		System.arraycopy(gambits, 0, newGambits, 0, gambits.length);
@@ -1145,16 +1292,19 @@ public class MainProcessor {
             int oldDef = unitArray[unitInd].def;
             int oldRes = unitArray[unitInd].res;
             int oldCha = unitArray[unitInd].cha;
-            String oldPersonal = unitArray[unitInd].personal;
             int oldWeaponType = unitArray[unitInd].wepTypeInd;
             int oldWeaponID = unitArray[unitInd].wepInd;
             int newWeaponType = newWepTyp;
             int newWeaponID = newWepID;
 
-            String oldString = oldName + " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck + " "
-            		+ oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID + " " + oldPersonal;
-            String newString = oldName + " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck + " "
-            		+ oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID + " " + oldPersonal;
+            String oldString =
+            		oldName
+            		+ " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck
+            		+ " " + oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID;
+            String newString =
+            		oldName
+            		+ " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck
+            		+ " " + oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID;
             
             String newContent = oldContent.replaceAll(oldString, newString);
             
@@ -1181,69 +1331,125 @@ public class MainProcessor {
 	// Calculating battle info
 	public static String battle(UnitInfo attacker, UnitInfo target) {
 		String results;
-		String mtFinal;
-		int critDmg;
-		int dmgFinal = 0;
-		int hitFinal;
-		int critFinal;
+		int critDmgAttacker;
+		int dmgFinalAttacker;
+		String dmgFinalAttackerString;
+		int hitFinalAttacker;
+		int critFinalAttacker;
+		int critDmgTarget;
+		int dmgFinalTarget;
+		String dmgFinalTargetString;
+		int hitFinalTarget;
+		int critFinalTarget;
 		
-		hitFinal = attacker.hit - target.genAvo;
-		critFinal = attacker.crit - target.critAvo;
-		critDmg = dmgFinal * 3;
-		
-		if((attacker.wep.wepName.compareTo("Heal") == 0) || (attacker.wep.wepName.compareTo("Physic") == 0) || (attacker.wep.wepName.compareTo("Recover") == 0) || (attacker.wep.wepName.compareTo("Fortify") == 0)) {
-			dmgFinal = attacker.magAtk;
-			hitFinal = 0;
-			critFinal = 0;
-		} else if(attacker.magEqp) {
-			dmgFinal = attacker.magAtk - target.res;
+		if(attacker.magEqp) {
+			dmgFinalAttacker = attacker.magAtk - target.res;
 		} else {
-			dmgFinal = attacker.physAtk - target.def;
+			dmgFinalAttacker = attacker.physAtk - target.def;
 		}
+		hitFinalAttacker = attacker.hit - target.genAvo;
+		critFinalAttacker = attacker.crit - target.critAvo;
+		critDmgAttacker = dmgFinalAttacker * 3;
+		
+		if(target.magEqp) {
+			dmgFinalTarget = target.magAtk - attacker.res;
+		} else {
+			dmgFinalTarget = target.physAtk - attacker.def;
+		}
+		hitFinalTarget = target.hit - attacker.genAvo;
+		critFinalTarget = target.crit - attacker.critAvo;
+		critDmgTarget = dmgFinalTarget * 3;
 		
 		
 		if(attacker.atkSpd - target.atkSpd >= 4) {
-			mtFinal = "\nMt: " + dmgFinal + " x2";
+			dmgFinalAttackerString = "\nMt: " + dmgFinalAttacker + " x2";
 		} else {
-			mtFinal = "\nMt: "+ dmgFinal;
+			dmgFinalAttackerString = "\nMt: "+ dmgFinalAttacker;
 		}
+		critDmgAttacker = dmgFinalAttacker * 3;
+		
+		if(target.atkSpd - attacker.atkSpd >= 4) {
+			dmgFinalTargetString = "\nMt: " + dmgFinalTarget + " x2";
+		} else {
+			dmgFinalTargetString = "\nMt: "+ dmgFinalTarget;
+		}
+		critDmgAttacker = dmgFinalAttacker * 3;
 		
 		results = attacker.name + " attacks " + target.name + " with " + attacker.wepName + "!"
-				+ mtFinal
-				+ "\nHit: " + hitFinal
-				+ "\nCrit: " + critFinal
-				+ "\nCrit Mt: " + critDmg
-				+ "\nAttacker Personal:" + attacker.personal
-				+ "\nTarget Personal:" + target.personal;
+				+ dmgFinalAttackerString
+				+ "\nHit: " + hitFinalAttacker
+				+ "\nCrit: " + critFinalAttacker
+				+ "\nCrit Mt: " + critDmgAttacker
+				
+				+ "\n\n If " + target.name + " counters:"
+				+ dmgFinalTargetString
+				+ "\nHit: " + hitFinalTarget
+				+ "\nCrit: " + critFinalTarget
+				+ "\nCrit Mt: " + critDmgTarget
+				
+				+ "\n\n" + attacker.name + "'s Crest: " + attacker.crest
+				+ "\n" + attacker.name + "'s Personal: " + attacker.personal
+				+ "\n\n" + target.name + "'s Crest: " + target.crest
+				+ "\n" + target.name + "'s Personal: " + target.personal;
 		
 		return results;
 	}
 	
 	public static String battle(UnitInfo attacker, UnitInfo target, ArtInfo combatArt) {
 		String results;
-		int critDmg;
-		int dmgFinal;
-		int hitFinal;
-		int critFinal;
+		String dmgFinalTargetString;
+		int critDmgAttacker;
+		int dmgFinalAttacker;
+		int hitFinalAttacker;
+		int critFinalAttacker;
+		int critDmgTarget;
+		int dmgFinalTarget;
+		int hitFinalTarget;
+		int critFinalTarget;
 		
 		if(attacker.magEqp || combatArt.magEqp) {
-			dmgFinal = attacker.magAtk + combatArt.mt - target.res;
+			dmgFinalAttacker = attacker.magAtk + combatArt.mt - target.res;
 		} else {
-			dmgFinal = attacker.physAtk + combatArt.mt - target.def;
+			dmgFinalAttacker = attacker.physAtk + combatArt.mt - target.def;
 		}
+		hitFinalAttacker = attacker.hit - target.genAvo + combatArt.hit;
+		critFinalAttacker = attacker.crit - target.critAvo + combatArt.crit;
+		critDmgAttacker = dmgFinalAttacker * 3;
 		
-		hitFinal = attacker.hit - target.genAvo + combatArt.hit;
-		critFinal = attacker.crit - target.critAvo + combatArt.crit;
-		critDmg = dmgFinal * 3;
+		if(target.magEqp) {
+			dmgFinalTarget = target.magAtk - attacker.res;
+		} else {
+			dmgFinalTarget = target.physAtk - attacker.def;
+		}
+		hitFinalTarget = target.hit - attacker.genAvo - combatArt.avo;
+		critFinalTarget = target.crit - attacker.critAvo;
+		critDmgTarget = dmgFinalTarget * 3;
+		
+		if(target.atkSpd - attacker.atkSpd >= 4) {
+			dmgFinalTargetString = "\nMt: " + dmgFinalTarget + " x2";
+		} else {
+			dmgFinalTargetString = "\nMt: "+ dmgFinalTarget;
+		}
+		critDmgAttacker = dmgFinalAttacker * 3;
 		
 		results = attacker.name + " attacks " + target.name + " with " + combatArt.name + " (" + attacker.wepName + ")!"
-				+ "\nMt: "+ dmgFinal
-				+ "\nHit: " + hitFinal
-				+ "\nCrit: " + critFinal
-				+ "\nCrit Mt: " + critDmg
+				+ "\nMt: "+ dmgFinalAttacker
+				+ "\nHit: " + hitFinalAttacker
+				+ "\nCrit: " + critFinalAttacker
+				+ "\nCrit Mt: " + critDmgAttacker
 				+ "\nEffect: " + combatArt.note
-				+ "\n\nAttacker Personal:" + attacker.personal
-				+ "\nTarget Personal:" + target.personal;
+				
+				+ "\n\n If " + target.name + " counters:"
+				+ dmgFinalTargetString
+				+ "\nHit: " + hitFinalTarget
+				+ "\nCrit: " + critFinalTarget
+				+ "\nCrit Mt: " + critDmgTarget
+				
+				+ "\n\n" + attacker.name + "'s Crest: " + attacker.crest
+				+ "\n" + attacker.name + "'s Personal: " + attacker.personal
+				+ "\n\n" + target.name + "'s Crest: " + target.crest
+				+ "\n" + target.name + "'s Personal: " + target.personal
+				;
 		
 		return results;
 	}
@@ -1270,8 +1476,10 @@ public class MainProcessor {
 				+ "\nMt: " + gambitDmg
 				+ "\nHit: " + gambitHit
 				+ "\nEffect: " + gambit.note
-				+ "\n\nAttacker Personal: " + attacker.personal
-				+ "\nTarget Personal: " + target.personal
+				+ "\n\n" + attacker.name + "'s Crest: " + attacker.crest
+				+ "\n" + attacker.name + "'s Personal: " + attacker.personal
+				+ "\n\n" + target.name + "'s Crest: " + target.crest
+				+ "\n" + target.name + "'s Personal: " + target.personal
 				+ "\n\n(unit authority proficiency modifier not added to Mt)";
 		
 		return results;
