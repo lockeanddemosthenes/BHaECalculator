@@ -45,3 +45,12 @@ NimbleCombo		04 00 00 20 false Two consecutive hits
 MonsterCrusher		13 10 10 00 false Mtx3 vs. monsters
 MysticBlow		10 10 00 00 true Mag-based dmg
 MightyBlow		10 -4 20 00 false No effect
+ApocalypticFlame	15 20 00 00 false Mtx3 vs. dragon; str-5 on foe after combat, 1 turn
+Atrocity		15 20 00 00 false Mtx3 vs. all
+BeastFang		10 00 00 00 false Mtx3 vs. cavalry, dragon
+BurningQuake	08 00 10 20 false Mtx3 vs. dragon; mt + spd/3
+Dust			20 00 00 00 false Mtx3 vs. dragon; def-5 on foe after combat, 1 turn
+FallenStar		10 30 00 10 false Mtx3 vs. dragon; avoids all attacks during next round of combat
+FoudroyantStrike	06 30 00 30 false Mtx3 vs. dragon, armor
+RuinedSky		13 10 10 10 false Mtx3 vs. flying
+RupturedHeaven	07 10 00 00 false Mtx3 vs. dragon; mt + mag/3
