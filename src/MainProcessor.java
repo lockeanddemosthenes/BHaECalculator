@@ -1132,9 +1132,9 @@ public class MainProcessor {
 			panelWeaponConfirm.add(selectReasonConfirm);
 			selectReasonConfirm.setVisible(false);
 			panelWeaponConfirm.add(selectWeaponCancel);
-			selectWeaponCancel.setVisible(true);
 			panelWeaponConfirm.add(selectRelicConfirm);
 			selectRelicConfirm.setVisible(false);
+			selectWeaponCancel.setVisible(true);
 			
 			panelCAWeapon.add(artNone, gbc);
 			panelCAWeapon.add(artSword, gbc);
