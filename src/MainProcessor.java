@@ -1375,6 +1375,17 @@ public class MainProcessor {
 		}
 		critDmgAttacker = dmgFinalAttacker * 3;
 		
+		if((attacker.wepName.equals("Heal")) ||
+				(attacker.wepName.equals("Physic")) ||
+				(attacker.wepName.equals("Recover")) ||
+				(attacker.wepName.equals("Fortify"))) {
+			dmgFinalAttacker = attacker.wep.mtBase + attacker.mag/3;
+			dmgFinalAttackerString = "\nMt: " + dmgFinalAttacker;
+			hitFinalAttacker = 100;
+			critFinalAttacker = 0;
+			System.out.println("this ran");
+		}
+		
 		results = attacker.name + " attacks " + target.name + " with " + attacker.wepName + "!"
 				+ dmgFinalAttackerString
 				+ "\nHit: " + hitFinalAttacker
