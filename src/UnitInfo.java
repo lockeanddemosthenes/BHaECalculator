@@ -23,6 +23,7 @@ public class UnitInfo {
 	int wepInd;
 	int wepTypeInd;
 	int auxWt;
+	int adjWt;
 	
 	WeaponInfo wep;
 	String crest;
@@ -66,8 +67,7 @@ public class UnitInfo {
 		int wepCrit = wep.critBase;
 		int wepWt = wep.wt;
 		int totalWt = wepWt + auxWt;
-		int adjWt = totalWt - (int)(str/5);
-		adjWt = (adjWt < 0? 0 : adjWt);
+		adjWt = totalWt - (int)(str/5);
 		
 		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0) || wep.wepName.compareTo("Fortify") == 0) {
 			magAtk = wepMt + mag/3;
@@ -79,7 +79,7 @@ public class UnitInfo {
 			critAvo = lck;
 			genAvo = lck + atkSpd/2;
 			atkSpd = spd - adjWt;
-			atkSpd = atkSpd < 0? 0 : atkSpd;
+			atkSpd = (atkSpd < 0? 0 : atkSpd);
 		}
 	}
 	
@@ -93,8 +93,8 @@ public class UnitInfo {
 		int wepCrit = wep.critBase;
 		int wepWt = wep.wt;
 		int totalWt = wepWt + auxWt;
-		int adjWt = totalWt - (int)(str/5);
-		adjWt = (adjWt < 0? 0 : adjWt);
+		int adjStr = str/5;
+		int adjWt = totalWt - adjStr;
 		
 		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0)) {
 			magAtk = wepMt + mag/3;
@@ -106,7 +106,7 @@ public class UnitInfo {
 			critAvo = lck;
 			genAvo = lck + atkSpd/2;
 			atkSpd = spd - adjWt;
-			atkSpd = atkSpd < 0? 0 : atkSpd;
+			atkSpd = (atkSpd < 0? 0 : atkSpd);
 		}
 	}
 }

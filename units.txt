@@ -274,7 +274,7 @@ Sylvain	35 20 11 19 15 9 12 8 12 5 1 0
 Minor Crest of Gautier (4) - Raises Mt by 5 when using combat arts.
 Philanderer - Dmg dealt +2, dmg receieved -2 when adjacent to female ally.
 
-Thyra 34 22 11 21 21 15 24 20 16 6 3 0
+Thyra 34 22 11 21 21 15 24 20 16 1 0 0
 Minor Crest of Aulis (2) - Raises Mt by 5 when using weapons.
 Martyr - While HP < 50%, crit +20 to adjacent allies.
 
