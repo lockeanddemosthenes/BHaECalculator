@@ -196,6 +196,7 @@ public class MainProcessor {
 			int cha = unitInput.nextInt();
 			int wepTyp = unitInput.nextInt();
 			int wepInd = unitInput.nextInt();
+			int auxWt = unitInput.nextInt();
 			String crestStart = unitInput.next();
 			String crest = crestStart + unitInput.nextLine();
 			String personal = unitInput.nextLine();
@@ -227,7 +228,7 @@ public class MainProcessor {
 					wepID = relics[wepInd];
 			}
 
-			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID, crest, personal);
+			UnitInfo newUnit = new UnitInfo(name, hp, str, mag, dex, spd, lck, def, res, cha, wepTyp, wepInd, wepID, auxWt, crest, personal);
 			units = addUnit(units, newUnit);
 			unitNames = addName(unitNames, name);
 		}
@@ -1296,15 +1297,16 @@ public class MainProcessor {
             int oldWeaponID = unitArray[unitInd].wepInd;
             int newWeaponType = newWepTyp;
             int newWeaponID = newWepID;
+            int oldAuxWt = unitArray[unitInd].auxWt;
 
             String oldString =
             		oldName
             		+ " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck
-            		+ " " + oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID;
+            		+ " " + oldDef + " " + oldRes + " " + oldCha + " " + oldWeaponType + " " + oldWeaponID + " " + oldAuxWt;
             String newString =
             		oldName
             		+ " " + oldHP + " " + oldStr + " " + oldMag + " " + oldDex + " " + oldSpd + " " + oldLck
-            		+ " " + oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID;
+            		+ " " + oldDef + " " + oldRes + " " + oldCha + " " + newWeaponType + " " + newWeaponID + " " + oldAuxWt;
             
             String newContent = oldContent.replaceAll(oldString, newString);
             

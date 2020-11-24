@@ -22,6 +22,8 @@ public class UnitInfo {
 	int cha;
 	int wepInd;
 	int wepTypeInd;
+	int auxWt;
+	
 	WeaponInfo wep;
 	String crest;
 	String personal;
@@ -36,7 +38,7 @@ public class UnitInfo {
 	int atkSpd;
 	int genAvo;
 	
-	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int ch, int wTypInd, int wInd, WeaponInfo w, String cre, String p) {
+	public UnitInfo(String n, int h, int s, int m, int d, int speed, int l, int defense, int r, int ch, int wTypInd, int wInd, WeaponInfo w, int extraWt, String cre, String p) {
 
 		//The variables that get put in when creating a unit
 		name = n;
@@ -56,14 +58,16 @@ public class UnitInfo {
 		wepInd = wInd;
 		wepName = wep.wepName;
 		magEqp = wep.magEqp;
+		auxWt = extraWt;
 		
 		//calculated boyos
 		int wepMt = wep.mtBase;
 		int wepHit = wep.hitBase;
 		int wepCrit = wep.critBase;
 		int wepWt = wep.wt;
-		int wepAdjWt = wepWt - (int)(str/5);
-		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
+		int totalWt = wepWt + auxWt;
+		int adjWt = totalWt - (int)(str/5);
+		adjWt = (adjWt < 0? 0 : adjWt);
 		
 		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0) || wep.wepName.compareTo("Fortify") == 0) {
 			magAtk = wepMt + mag/3;
@@ -74,7 +78,7 @@ public class UnitInfo {
 			crit = wepCrit + dex + lck/2;
 			critAvo = lck;
 			genAvo = lck + atkSpd/2;
-			atkSpd = spd - wepAdjWt;
+			atkSpd = spd - adjWt;
 			atkSpd = atkSpd < 0? 0 : atkSpd;
 		}
 	}
@@ -88,8 +92,9 @@ public class UnitInfo {
 		int wepHit = wep.hitBase;
 		int wepCrit = wep.critBase;
 		int wepWt = wep.wt;
-		int wepAdjWt = wepWt - (int)(str/5);
-		wepAdjWt = wepAdjWt < 0? 0 : wepAdjWt;
+		int totalWt = wepWt + auxWt;
+		int adjWt = totalWt - (int)(str/5);
+		adjWt = (adjWt < 0? 0 : adjWt);
 		
 		if((wep.wepName.compareTo("Heal") == 0) || (wep.wepName.compareTo("Physic") == 0) || (wep.wepName.compareTo("Recover") == 0)) {
 			magAtk = wepMt + mag/3;
@@ -100,7 +105,7 @@ public class UnitInfo {
 			crit = wepCrit + dex + lck/2;
 			critAvo = lck;
 			genAvo = lck + atkSpd/2;
-			atkSpd = spd - wepAdjWt;
+			atkSpd = spd - adjWt;
 			atkSpd = atkSpd < 0? 0 : atkSpd;
 		}
 	}
