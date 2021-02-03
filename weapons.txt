@@ -146,3 +146,4 @@ Lúin				false 17 90 10 9
 ScytheOfSariel			false 10 100 30 6
 SwordOfTheCreator		false 7 90 0 9
 Thunderbrand			false 13 70 10 7
+VajraMushti			false 7 90 10 7
