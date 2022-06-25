@@ -1,6 +1,6 @@
 WrathStrike			05 10 00 00 false No effect
-Grounder			03 20 05 00 false Mtx2 vs. flying
-BaneOfMonsters		06 00 10 00 false Mtx2 vs. monsters
+Grounder			03 20 05 00 false WpMtx2 vs. flying
+BaneOfMonsters		06 00 10 00 false WpMtx2 vs. monsters
 HazeSlice			02 00 00 30 false No effect
 Hexblade			07 10 00 00 true Mag-based dmg
 Sunder				04 00 15 00 false No effect
@@ -8,18 +8,18 @@ Soulblade			02 10 00 00 true Mag-based dmg, mt+(res/3)
 Windsweep			03 20 10 00 false Prevents counterattack
 FinesseBlade		02 00 00 10 false Mt + (dex/3)
 TempestLance		08 10 00 00 false No effect
-Knightkneeler		05 15 00 00 false Mtx2 vs. cavalry
+Knightkneeler		05 15 00 00 false WpMtx2 vs. cavalry
 ShatterSlash		04 10 00 00 false Def-5 on foe for 1 turn
 Vengeance		02 00 10 00 false Mt+(missing HP/3) - not accounted for
-MonsterPiercer		07 00 00 00 false Mtx2 vs. monsters
+MonsterPiercer		07 00 00 00 false WpMtx2 vs. monsters
 HitAndRun		04 10 00 20 false Moves 1 space back after combat
 FrozenLance		03 05 00 00 true Mt + (dex/3)
 SwiftStrikes		02 00 00 00 false Two consecutive hits
 GlowingEmber		02 00 00 10 false Mt + (def/3)
 LanceJab		03 00 10 00 false Mt + (spd/3)
 Smash		03 20 20 00 false No effect
-HelmSplitter	07 00 05 00 false Mtx2 vs. armor
-MonsterBreaker	09 00 00 00 false Mtx2 vs. monsters
+HelmSplitter	07 00 05 00 false WpMtx2 vs. armor
+MonsterBreaker	09 00 00 00 false WpMtx2 vs. monsters
 FocusedStrike	00 30 00 00 false No effect
 WildAbandon	10 -30 30 00 false No effect
 LightningAxe	04 00 00 00 true Mag-based dmg, mt+(res/3)
@@ -30,7 +30,7 @@ CurvedShot		01 30 00 00 false No effect
 HeavyDraw		08 10 00 00 false No effect
 Deadeye			06 00 00 00 false No effect
 WaningShot		04 10 00 00 false Str-5 on foe after combat, 1 turn
-MonsterBlast		05 00 10 00 false Mtx2 vs. monsters
+MonsterBlast		05 00 10 00 false WpMtx2 vs. monsters
 BreakShot		04 05 00 00 false Def-5 on foe after combat, 1 turn
 SchismShot		04 15 00 00 false Res-5 on foe after combat, 1 turn
 PointBlankVolley	03 10 00 10 false Two consecutive hits
@@ -42,15 +42,15 @@ DrainingBlow		05 20 00 00 false Restores 50%dmg HP
 Bombard			03 00 10 00 false Two consecutive hits
 One-TwoPunch		08 20 00 00 false Guaranteed follow-up
 NimbleCombo		04 00 00 20 false Two consecutive hits
-MonsterCrusher		13 10 10 00 false Mtx2 vs. monsters
+MonsterCrusher		13 10 10 00 false WpMtx2 vs. monsters
 MysticBlow		10 10 00 00 true Mag-based dmg
 MightyBlow		10 -4 20 00 false No effect
-ApocalypticFlame	15 20 00 00 false Mtx2 vs. dragon; str-5 on foe after combat, 1 turn
-Atrocity		15 20 00 00 false Mtx2 vs. all
-BeastFang		10 00 00 00 false Mtx2 vs. cavalry, dragon
-BurningQuake	08 00 10 20 false Mtx2 vs. dragon; mt + spd/3
-Dust			20 00 00 00 false Mtx2 vs. dragon; def-5 on foe after combat, 1 turn
-FallenStar		10 30 00 10 false Mtx2 vs. dragon; avoids all attacks during next round of combat
-FoudroyantStrike	06 30 00 30 false Mtx2 vs. dragon, armor
-RuinedSky		13 10 10 10 false Mtx2 vs. flying
-RupturedHeaven	07 10 00 00 false Mtx2 vs. dragon; mt + mag/3
+ApocalypticFlame	15 20 00 00 false WpMtx2 vs. dragon; str-5 on foe after combat, 1 turn
+Atrocity		15 20 00 00 false WpMtx2 vs. all
+BeastFang		10 00 00 00 false WpMtx2 vs. cavalry, dragon
+BurningQuake	08 00 10 20 false WpMtx2 vs. dragon; mt + spd/3
+Dust			20 00 00 00 false WpMtx2 vs. dragon; def-5 on foe after combat, 1 turn
+FallenStar		10 30 00 10 false WpMtx2 vs. dragon; avoids all attacks during next round of combat
+FoudroyantStrike	06 30 00 30 false WpMtx2 vs. dragon, armor
+RuinedSky		13 10 10 10 false WpMtx2 vs. flying
+RupturedHeaven	07 10 00 00 false WpMtx2 vs. dragon; mt + mag/3

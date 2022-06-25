@@ -1,0 +1,79 @@
+Myrmidon-A 28 8 4 10 16 6 7 3 7 0 0 0
+No crest
+No personal
+
+Soldier-A 28 8 4 16 10 6 7 7 7 1 0 0
+No crest
+No personal
+
+Monk-A 28 4 10 10 10 7 3 7 7 6 0 0
+No crest
+No personal
+
+Archer-A 28 9 4 11 10 6 7 3 7 3 0 0
+No crest
+No personal
+
+Fighter-A 28 12 4 10 10 6 7 3 7 2 0 0
+No crest
+No personal
+
+Myrmidon-B 30 10 4 13 18 8 10 7 7 0 0 0
+No crest
+No personal
+
+Soldier-B 30 10 4 18 10 9 10 10 7 1 0 0
+No crest
+No personal
+
+Monk-B 30 5 15 13 10 9 7 10 7 6 0 0
+No crest
+No personal
+
+Archer-B 30 12 4 14 12 8 10 7 7 3 0 0
+No crest
+No personal
+
+Fighter-B 30 14 4 12 10 8 12 7 7 2 0 0
+No crest
+No personal
+
+Myrmidon-C 33 16 5 16 21 10 13 10 7 0 0 0
+No crest
+No personal
+
+Soldier-C 33 15 5 21 14 11 13 13 7 1 0 0
+No crest
+No personal
+
+Monk-C 33 8 18 15 14 11 10 13 7 6 0 0
+No crest
+No personal
+
+Archer-C 33 17 5 16 16 10 13 10 7 3 0 0
+No crest
+No personal
+
+Fighter-C 33 20 5 14 14 10 13 10 7 2 0 0
+No crest
+No personal
+
+Myrmidon-D 36 18 10 18 24 12 15 13 7 0 0 0
+No crest
+No personal
+
+Soldier-D 36 17 10 24 18 14 16 14 7 1 0 0
+No crest
+No personal
+
+Monk-D 36 11 20 17 18 15 14 16 7 6 0 0
+No crest
+No personal
+
+Archer-D 36 19 10 18 19 12 16 14 7 3 0 0
+No crest
+No personal
+
+Fighter-D 36 24 10 16 15 12 15 14 7 2 0 0
+No crest
+No personal

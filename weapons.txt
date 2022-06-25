@@ -135,7 +135,7 @@ Ragnarok			true 15 80 5 9
 DarkSpikesT			true 13 80 0 11
 AgneasArrow			true 16 70 5 13
 HadesΩ				true 18 65 10 16
-None				false 0 70 0 0
+None				false 0 90 0 0
 Areadbhar			false 19 75 10 9
 Blutgang			true 13 80 0 7
 Crusher				true 18 60 0 11

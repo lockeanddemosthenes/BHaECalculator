@@ -1,8 +1,8 @@
-Aelfric 27 11 21 10 10 5 18 20 10 6 0 0
+Aelfric 27 11 21 10 10 5 18 20 10 5 0 0
 Minor Crest of Seiros (4) - Raises Mt by 5 when using combat arts.
 Devotion - -3 Dmg to adjacent allies during combat.
 
-Ahab 30 17 14 24 15 13 12 14 12 0 4 0
+Ahab 37 21 18 28 23 17 16 18 15 5 0 0
 No crest
 Never Reveal Your Secret - Half the overkill damage to an enemy unit will heal this unit.
 
@@ -10,23 +10,19 @@ Alois 53 35 8 12 16 13 24 13 16 2 10 -3
 No crest
 Compassion - Rally grants ally Lck +8.
 
-Alyse 31 15 21 18 15 14 16 17 12 6 13 2
-No crest
-Macabre Encouragement - Mag/Res +2 for one turn after defeating an enemy unit.
-
-Annette 32 8 25 11 13 12 11 17 9 6 2 0
+Annette 34 8 26 13 16 13 12 18 10 2 0 0
 Minor Crest of Dominic (1) - Conserves uses of attack magic.
 Perseverance - Rally grants ally Str +4.
 
-Arvyn 36 29 13 14 18 16 20 11 12 0 2 0
+Arvyn 41 35 15 19 21 22 26 16 17 0 2 0
 No crest
 Dauntless - While this unit has 2+ enemies and no allies within 2 spaces, +10 Avo and +3 Mt.
 
-Ashe 32 18 7 15 13 14 14 13 10 3 2 0
+Ashe 33 19 7 15 13 14 14 14 10 3 2 0
 No crest
 Lockpick - Can open locks and chests without keys.
 
-Ashley 31 20 31 17 13 18 16 21 13 5 4 1
+Ashley 32 21 35 17 14 21 17 26 16 6 8 1
 Minor Crest of Gildus (1) - Allows weapon attacks to strike an extra time.
 Adapt and Overcome - After taking a physical attack, +3 Def. After a magical attack, +3 Res. Lasts one turn.
 
@@ -38,15 +34,15 @@ Banquo 30 10 12 10 9 7 12 9 6 2 4 0
 Minor Crest of Gloucester (1) - Raises Mt by 5 when using magic attacks.
 Disillusioned Belief - When HP < 50%, healing restores 3 less HP, but Mt +3.
 
-Bernadetta 36 21 9 18 18 22 14 10 10 3 2 0
+Bernadetta 38 22 10 23 19 22 15 11 11 3 2 0
 Minor Crest of Indech (1) - Allows weapon attacks to strike an extra time.
 Persecution Complex - When HP is not full, Mt +5.
 
-Briar 32 17 10 20 24 11 14 13 12 0 4 0
+Briar 33 20 11 20 24 13 16 14 12 0 4 0
 Major Crest of Seiros (7) - Raises Mt by 5 when using combat arts.
 Professor's Guidance - +20% XP gained to unit and adjacent allies.
 
-Byleth 33 25 10 20 17 11 18 13 12 7 9 0
+Byleth 33 27 11 21 19 12 19 14 12 7 9 0
 Major Crest of Flames (2) - Restores HP equal to 30% of damage dealt.
 Professor's Guidance - +20% XP gained to unit and adjacent allies.
 
@@ -54,7 +50,7 @@ Caspar 26 13 3 8 6 8 10 9 4 4 3 0
 No crest
 Born Fighter - Avo -10 to adjacent foes.
 
-Caster 30 16 9 13 14 21 10 13 8 6 0 0
+Caster 34 19 12 16 16 24 14 15 10 6 0 0
 No crest
 Numbers Against Them - +10 hit when a battalion is deployed.
 
@@ -62,15 +58,15 @@ Catherine 47 26 10 18 32 12 17 8 10 7 10 0
 Major Crest of Charon (7) - Raises Mt by 5 when using combat arts.
 Fighting Spirit - -5 dmg taken when no battalion.
 
-Celestyna 39 21 18 13 16 23 12 10 5 4 7 0
+Celestyna 43 24 21 14 19 26 15 12 6 4 7 0
 Major Crest of Rán (2) - Allows weapon attacks to strike an extra time.
 One Step Ahead - Lck% (15) of countering before the enemy attacks.
 
-Claude 33 24 7 20 23 18 18 15 17 2 0 0
+Claude 33 26 7 20 24 18 20 15 18 2 0 0
 Minor Crest of Riegan (3) - Restores HP equal to 30% of damage dealt when using combat arts.
 Leicester Lineage - +20% XP gained.
 
-Constance 35 7 27 16 22 10 22 18 8 6 19 4
+Constance 38 7 32 17 25 11 25 21 8 6 0 4
 Major Crest of Noa (2) - Conserves uses of magic attacks.
 Circadian Beat - Str/Mag +3 when indoors, Def/Res +3 when outdoors.
 
@@ -78,11 +74,11 @@ Curan 19 18 2 13 8 7 11 4 8 2 4 0
 No crest
 ??? - no personal atm
 
-Cyril 41 24 10 17 16 14 15 11 11 2 4 0
+Cyril 44 26 11 18 18 15 16 12 13 2 4 0
 No crest
 Aptitude - Permanent +2 (up to 10) to stat increase number.
 
-Dahlia 33 11 25 14 16 15 13 14 9 6 4 0
+Dahlia 35 11 32 17 18 19 19 17 12 5 2 3
 No crest
 Motherly - Mt/Def +3 to adjacent allies when their health < 50%.
 
@@ -90,11 +86,11 @@ Dedue 31 13 4 6 10 6 13 6 11 2 4 0
 No crest
 Staunch Shield - Def +4 for one turn if unit waits.
 
-Dimitri 34 22 4 19 12 10 15 10 10 1 2 0
+Dimitri 39 25 6 21 15 13 18 13 12 1 2 0
 Minor Crest of Blaiddyd (1) - Doubles Mt and uses consumed when using combat arts.
 Royal Lineage - +20% XP gained.
 
-Dolche 27 6 15 10 9 6 6 6 5 1 0 0
+Dolche 31 9 16 11 10 8 8 9 7 1 0 0
 No crest
 Crest Fraud - If user rolls a 1 on d10, conserves magic use and -5 health.
 
@@ -106,43 +102,43 @@ Edelgard 39 23 8 10 14 11 17 9 15 2 4 -3
 Minor Crest of Seiros (4)/Major Crest of Flames (2) - Raises Mt by 5 when using combat arts. / Restores HP equal to 30% of damage dealt.
 Imperial Lineage - +20% XP gained.
 
-Elias 31 21 6 18 22 11 17 10 16 0 4 0
+Elias 34 25 7 23 26 14 22 14 21 0 4 0
 No crest
 One for All - Unit gains Avo +10 while a battalion is deployed.
 
-Emaline 34 10 17 16 16 10 12 16 12 5 4 0
+Emaline 34 10 18 17 17 10 12 17 12 5 4 0
 No crest
 Selfless - Unit may sacrifice HP to add to her healing at a 1:1 rate.
 
-Emilie 32 20 11 17 16 12 13 13 9 2 10 0
+Emilie 34 22 12 22 22 16 16 18 12 2 10 0
 Minor Crest of Fae (3) - Converts enemy Wind magic to heal for 30% of Mt.
 Distaste - Mt +3 against male enemies.
 
-Esme 32 19 5 21 14 10 15 13 6 2 0 0
+Esme 33 22 5 22 15 11 18 15 7 2 0 -3
 No crest
 Snacktime Preparation - If unit waits, restores 10% HP.
 
-Felix 36 31 9 11 20 11 17 14 7 0 4 0
+Felix 40 35 10 12 23 12 19 17 8 0 2 0
 Major Crest of Fraldarius (4) - Raises Mt by 5 when using weapons.
 Lone Wolf - Mt +5 when no battalion.
 
-Ferdinand 34 20 8 18 16 9 16 12 12 1 2 0
+Ferdinand 39 25 10 20 21 11 21 16 14 1 2 0
 Minor Crest of Cichol (3) - Prevents enemy counterattack when using combat arts.
 Confidence - Hit/Avo +15 when HP is full.
 
-Finley 31 21 10 23 24 17 18 17 15 1 0 0
+Finley 34 24 10 26 27 20 21 21 18 1 0 0
 No crest
 Disarm With Charm - Hit-10 to adjacent foes.
 
-Flayn 30 11 18 15 12 11 9 23 16 1 0 0
+Flayn 31 12 19 16 13 12 10 24 17 1 0 0
 Major Crest of Cethleann (5) - Raises Mt by 5 when using recovery magic.
 Lily's Poise - -3 dmg to adjacent allies.
 
-Fritz 30 15 14 18 23 13 12 14 6 0 4 0
+Fritz 31 17 15 21 27 14 13 15 7 0 4 0
 No crest
 Lone Wolf - Mt +5 when no battalion.
 
-Gavrel 33 16 10 12 12 12 16 12 12 1 0 0
+Gavrel 36 18 11 13 13 13 18 14 13 1 4 0
 No crest
 Sturdy Stance - +2 Def/Str when enemy initiates attack.
 
@@ -150,31 +146,35 @@ Gilbert 43 15 8 12 2 10 25 7 9 2 4 0
 No crest
 Veteran Knight - -2 dmg taken if a battalion is active.
 
-Hanneman 30 11 22 16 12 5 11 14 6 6 2 0
+Hanneman 31 11 23 16 13 6 12 15 6 6 2 0
 Minor Crest of Indech (1) - Allows weapon attacks to strike an extra time.
 Professor's Guidance - +20% XP gained to unit and adjacent allies.
 
-Hapi 31 12 17 13 12 8 14 13 7 6 4 0
+Hapi 32 13 19 19 14 11 15 16 9 6 5 0
 Major Crest of Timotheos (2) - Conserves uses of recovery magic.
 Monstrous Appeal - Mtx3 vs. monsters; more likely to be targeted.
 
-Hilda 42 26 8 12 15 13 12 12 14 2 4 0
+Hilda 44 29 8 13 18 13 14 14 15 2 4 0
 Minor Crest of Goneril (3) - Prevents enemy counterattack when using combat arts.
 Advocate - +3 dmg dealt by adjacent male allies.
 
-Hubert 31 7 27 15 15 16 17 16 7 6 4 0
+Holte 26 10 6 8 9 7 9 6 9 2 4 0
+Minor Crest of Mångata (1) - Raises Mt by 8 when using weapons.
+Last Resort - Crit/Hit +5 when HP < 40%.
+
+Hubert 30 8 29 16 17 18 21 19 8 6 4 0
 No crest
 Officer Duty - Gambit Mt +5.
 
-Ignatz 36 19 8 20 25 20 18 19 14 3 10 0
+Ignatz 38 23 9 22 30 22 20 21 17 3 10 0
 No crest
 Watchful Eye - Hit +20.
 
-Ingrid 34 15 12 16 18 17 16 18 12 1 2 2
+Ingrid 38 19 15 20 22 26 20 23 16 1 2 2
 Minor Crest of Daphnel (4) - Raises Mt by 5 when using combat arts.
 Lady Knight - Mt +3, Hit +5 when using gambits.
 
-Irene 28 17 5 15 17 12 13 10 6 0 4 0
+Irene 29 18 5 16 19 12 13 10 7 0 4 0
 No crest
 Show Off - When adjacent to an ally not from the Church of Seiros faction, +5 Crit and -5 Avo.
 
@@ -182,23 +182,19 @@ Jeritza 47 22 17 18 18 13 20 22 5 7 8 0
 Minor Crest of Lamine (2) - Conserves uses of recovery magic.
 Murderous Intent - Hit +20 when initiating combat.
 
-Jorien 24 5 7 9 14 9 7 5 9 0 4 0
-No crest
-Pocket Sand - Spd +5 when unit is not at full HP.
-
-Lavinia 32 14 22 14 19 17 16 13 15 6 4 0
+Lavinia 32 14 22 15 19 17 16 13 16 6 12 0
 No crest
 Arcane Intuition - Avo +10 when enemy initiates combat.
 
-Layla 33 16 21 18 17 13 12 17 16 6 0 0
+Layla 37 24 23 20 20 15 20 19 19 6 0 0
 Minor Crest of Gautier (4) - Raises Mt by 5 when using combat arts.
 Cheerful Spirit - Rally grants ally Mag/Str +3.
 
-Leonie 36 18 12 23 16 16 16 15 14 1 2 0
+Leonie 36 20 12 23 19 18 19 16 16 1 2 0
 No crest
 Rivalry - Dmg dealt +2, dmg received -2 when adjacent to male ally.
 
-Linhardt 33 9 19 8 16 10 11 12 7 5 3 0
+Linhardt 37 12 22 12 19 13 13 18 10 5 3 0
 Minor Crest of Cethleann (3) - Raises Mt by 5 when using recovery magic.
 Catnap - If unit waits, restores 10% HP.
 
@@ -206,15 +202,11 @@ Lorenz 29 11 11 9 9 7 11 10 5 6 0 0
 Minor Crest of Gloucester (1) - Raises Mt by 5 when using magic attacks.
 Distinguished House - Mt +2 when a battalion is deployed.
 
-Lou 27 7 10 8 8 7 9 9 5 0 4 0
-No crest
-Ghostly - Crit +5 when using dark magic.
-
-Lucy 42 27 13 18 15 13 29 21 13 1 2 0
+Lucy 46 36 16 25 17 17 34 24 16 1 2 0
 Minor Crest of Thiordon (1) - Recover 40% of current lost HP when initiating combat.
 Three's a Crowd - If unit has exactly one adjacent ally at the start of the turn, -3 dmg taken, and ally restores 10% HP.
 
-Lysithea 31 10 28 17 18 12 10 20 14 6 0 0
+Lysithea 34 12 33 19 23 15 13 24 17 6 0 0
 Minor Crest of Charon (4)/ Major Crest of Gloucester (2) - Raises Mt by 5 when using combat arts. / Raises Mt by 5 when using magic attacks.
 Mastermind - x2 skills XP from combat.
 
@@ -222,7 +214,7 @@ Manuela	35 14 15 15 16 12 9 19 15 5 1 0
 No crest
 Infirmary Master - Crit Avo +10 to adjacent allies.
 
-Marianne 31 13 20 15 13 17 15 18 13 5 3 1
+Marianne 33 14 22 17 15 20 17 21 15 5 3 1
 Minor Crest of the Beast (2) - Raises Mt by 5 when using weapons.
 Animal Friend - Restores 20% HP at start of turn when adjacent to horseback or flying ally.
 
@@ -230,35 +222,35 @@ Mercedes 31 8 21 13 16 12 16 18 11 6 0 0
 Minor Crest of Lamine (1) - Conserves uses of recovery magic.
 Live to Serve - When healing allies, unit is healed by the same amount.
 
-Mysa 35 15 13 15 17 11 14 16 13 1 2 0
+Mysa 31 16 13 16 17 16 15 18 13 3 2 0
 Major Crest of Mångata (2) - Raises Mt by 8 when using weapons.
 Hypeman - Crit +5 when the unit has a battalion.
 
-Odhyl 29 6 26 15 11 7 13 16 7 5 3 0
+Odhyl 30 6 28 16 13 8 14 17 7 5 3 0
 Major Crest of Nethra (2) - Heals target double the original amount and heals self for half.
 The Eye of Truth - When HP < 30%, Hit+10 and Mag+2.
 
-Olvaerr 33 7 17 12 13 13 14 16 13 6 2 0
+Olvaerr 35 7 19 12 14 14 16 17 13 6 8 0
 No crest
 Song of Rest - Restores adjacent allies' HP by 10% at the start of each turn.
 
-Petra 37 18 11 17 17 13 14 14 10 0 4 0
+Petra 41 20 13 19 19 16 16 16 12 0 4 0
 No crest
 Hunter's Boon - Crit +20 when foe's HP < 50%.
 
-Raphael 35 17 4 12 12 10 15 11 6 4 3 0
+Raphael 40 22 6 19 20 15 19 13 8 4 3 0
 No crest
 Goody Basket - Lck% chance of regaining 10% HP at start of turn.
 
-Rowan 32 16 17 14 17 12 17 16 13 6 3 2
+Rowan 35 18 19 16 19 14 19 18 15 6 3 2
 Minor Crest of Cethleann (3) - Raises Mt by 5 when using recovery magic.
 Exotic Dance - If the unit isn’t mounted, they may Dance to refresh allies.
 
-Sabella	31 20 9 20 18 17 15 10 9 0 4 0
+Sabella	32 21 10 20 19 18 16 11 9 0 4 0
 No crest
 Cat's Claws - Crit +15 when HP < 50%.
 
-Selena 39 26 6 21 15 15 25 19 12 1 2 0
+Selena 39 28 7 23 15 15 27 19 12 1 2 0
 No crest
 Guardian's Vigil - While HP > 50%, enemies cannot pass through adjacent tiles.
 
@@ -270,27 +262,27 @@ Shamir 35 20 9 27 15 21 14 9 11 3 2 0
 No crest
 Survival Instinct - Str/Mag/Dex/Spd +4 for one turn after initiating combat and defeating foe.
 
-Silver 26 20 20 12 22 5 14 15 14 0 4 0
+Silver 27 21 21 13 23 6 15 16 15 0 4 0
 No crest
 Professor's Guidance - +20% XP gained to unit and adjacent allies.
 
-Soleil 29 15 25 10 14 12 10 13 18 6 0 0
+Soleil 31 17 30 11 17 12 10 13 19 0 12 0
 No crest
 Natural-Born Leader - Gambit Mt +5.
 
-Sylvain	36 21 11 20 14 9 13 8 12 5 1 0
+Sylvain	37 23 11 22 15 9 14 9 13 5 1 0
 Minor Crest of Gautier (4) - Raises Mt by 5 when using combat arts.
 Philanderer - Dmg dealt +2, dmg receieved -2 when adjacent to female ally.
 
-Thyra 33 26 12 20 22 15 23 21 16 6 3 0
+Thyra 35 30 15 25 26 16 26 24 20 6 8 0
 Minor Crest of Aulis (2) - Raises Mt by 5 when using weapons.
 Martyr - While HP < 50%, crit +20 to adjacent allies.
 
-Tobias 35 20 13 16 15 13 17 14 12 1 2 0
+Tobias 38 22 16 21 18 16 19 17 15 1 2 0
 No crest
 Optimist - Avo/Hit +10, Mt +3 when initiating combat while adjacent to more than one foe.
 
-Veriko 26 6 30 20 24 13 14 11 14 6 0 0
+Veriko 28 7 34 24 29 17 16 13 18 6 8 0
 No crest
 Nine Lives - When HP > 50%, survive any OHKO with 1 HP.
 
@@ -298,90 +290,14 @@ William	30 19 11 15 15 12 14 14 11 0 4 0
 No crest
 Breath of Life - After the unit initiates combat, heal all adjacent allies by 5 HP.
 
-Yuri 33 18 13 14 16 14 12 12 15 0 4 0
+Yuri 34 24 18 15 22 14 12 12 16 0 4 0
 Major Crest of Aubin (2) - Prevents enemy counterattack when using weapons.
 Honorable Spirit - Atk +3 when in combat with an adjacent foe with no adjacent allies.
 
-Zegrath 24 16 15 16 21 10 11 12 12 6 2 0
+Zegrath 26 18 17 18 26 10 13 14 14 6 8 0
 No crest
 Strike Seeker - Mt +3, Avo +10 when HP < 50%.
 
-Zero 35 30 7 27 23 14 18 10 18 3 2 0
+Zero 36 31 8 29 25 16 19 11 20 3 2 0
 No crest
 Shining Ninja - If unit waits, Mt +2 to adjacent allies. If no adjacent allies, Mt +3 to self.
-
-Mercenary 35 16 8 13 18 13 13 9 8 0 4 0
-No crest
-No personal
-
-Brigand 35 18 8 12 13 10 16 8 8 2 4 0
-No crest
-No personal
-
-Brawler 35 16 8 17 16 13 12 10 8 4 4 0
-No crest
-No personal
-
-Soldier 35 14 8 18 16 13 13 9 12 1 2 0
-No crest
-No personal
-
-Archer 35 16 8 18 12 13 13 9 8 3 2 0
-No crest
-No personal
-
-FireMage 35 8 17 13 14 11 9 13 8 6 0 0
-No crest
-No personal
-
-PyroMage 35 8 14 14 15 12 8 10 10 6 0 0
-No crest
-No personal
-
-WindMage 35 8 16 13 16 11 9 13 8 6 2 0
-No crest
-No personal
-
-ThunMage 35 8 17 12 14 11 9 12 8 6 1 0
-No crest
-No personal
-
-DarkMage 35 8 20 13 11 14 8 12 8 6 4 0
-No crest
-No personal
-
-Priest 35 8 16 13 12 12 10 13 8 5 3 0
-No crest
-No personal
-
-ArmKni 35 15 8 15 11 11 20 6 8 1 2 0
-No crest
-No personal
-
-Cavalier 35 15 8 13 13 11 14 9 10 0 4 0
-No crest
-No personal
-
-PegKni 35 13 8 15 16 11 12 13 8 1 2 0
-No crest
-No personal
-
-GBird 50 17 0 12 18 0 8 13 0 7 0 0
-No crest
-No personal
-
-GWolf 50 20 0 12 13 0 13 8 0 7 0 0
-No crest
-No personal
-
-Ochs 40 14 12 14 20 15 11 11 13 7 11 0
-No crest
-No personal
-
-FrlnBeast 60 25 0 12 16 0 8 10 0 7 0 0
-No crest
-No personal
-
-WildDemBeast 40 25 10 15 15 0 15 14 0 7 0 0
-No crest
-No personal
