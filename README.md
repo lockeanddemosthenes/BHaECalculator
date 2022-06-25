@@ -29,12 +29,15 @@ This version is deprecated. This repository remains available for archival purpo
 
 ## Screenshots
 ![Combat type selection screen](/img/img1.png)
+
 *Combat type selection screen*
 
 ![Sample combat output](/img/img2.png)
+
 *Sample combat output screen*
 
 ![Sample combat art selection](/img/img3.png)
+
 *Lance combat art selection screen*
 
 ## Tools
