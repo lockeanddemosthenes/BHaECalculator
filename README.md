@@ -46,24 +46,26 @@ Java and Java Swing were utilized to create this calculator.
 - Java Swing was used to create a GUI for easy, intuitive use by all members of the community.
 
 ## Equations
-Atk = WeaponMt + (Mag||Str)
-Hit = WeaponHit + Dex + Lck/2
-For combat arts that extend outside of the weapon & user’s natural range, hit -10 * (spaces)
-Crit = WeaponCrit + Dex + Lck/2
-CritAvo = Lck
-AtkSpd = Spd - (TotalWt - int(Str/5))
-Avo = Lck + AtkSpd/2
+### Definitions
+* Atk = WeaponMt + (Mag||Str)
+* Hit = WeaponHit + Dex + Lck/2
+  * For combat arts that extend outside of the weapon & user’s natural range, hit -10 * (spaces)
+* Crit = WeaponCrit + Dex + Lck/2
+* CritAvo = Lck
+* AtkSpd = Spd - (TotalWt - int(Str/5))
+* Avo = Lck + AtkSpd/2
 
-Dmg per attack = [Attacker]Atk - [Defender](Def || Res)
-Follow-up attack if difference in AtkSpd >= 4
-Hit rate = [Attacker]Hit - [Defender]Avo
-Crit rate = [Attacker]Crit - [Defender]CritAvo
-Crit dmg = Dmg per attack * 3
-Effective dmg from weapon = WeaponMt * 3 + (Mag || Str)
-Effective dmg from combat art = WeaponMt * 2 + ArtMt + (Mag || Str)
-Effective dmg from weapon + combat art = WeaponMt * 3 + ArtMt + (Mag || Str)
+### Main equations
+* Dmg per attack = [Attacker]Atk - [Defender](Def || Res)
+* Follow-up attack if difference in AtkSpd >= 4
+* Hit rate = [Attacker]Hit - [Defender]Avo
+* Crit rate = [Attacker]Crit - [Defender]CritAvo
+* Crit dmg = Dmg per attack * 3
+* Effective dmg from weapon = WeaponMt * 3 + (Mag || Str)
+* Effective dmg from combat art = WeaponMt * 2 + ArtMt + (Mag || Str)
+* Effective dmg from weapon + combat art = WeaponMt * 3 + ArtMt + (Mag || Str)
 
-Gambit Dmg (phys) = (GambitMt + AuthorityLv)* EffBonus + int(Cha/5) + [Attacker](Mag || Str) - [Defender](Def || Res)
-Gambit Hit Rate = GambitHit + (([Attacker]Cha - [Defender]Cha) * 5)
-
-Authority Lv: E = 0, E+ = 2, D = 3, D+ = 4, C = 5, C+ = 6, B = 7, B+ = 8, A = 9, A+ = 10, S = 11, S+ = 12
+### Gambit equations
+* Gambit Dmg (phys) = (GambitMt + AuthorityLv)* EffBonus + int(Cha/5) + [Attacker](Mag || Str) - [Defender](Def || Res)
+* Gambit Hit Rate = GambitHit + (([Attacker]Cha - [Defender]Cha) * 5)
+* Authority Lv: E = 0, E+ = 2, D = 3, D+ = 4, C = 5, C+ = 6, B = 7, B+ = 8, A = 9, A+ = 10, S = 11, S+ = 12
